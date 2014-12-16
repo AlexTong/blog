@@ -90,6 +90,52 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-nodejs-socket" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2014/12/16/nodejs-socket/" class="article-date">
+  <time datetime="2014-12-16T04:27:13.000Z" itemprop="datePublished">Dec 16 2014</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/Nodejs/">Nodejs</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2014/12/16/nodejs-socket/">NodeJS Socket 消息传输的那点事儿</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Node JS.</p>
+<h2 id="Quick_Start">Quick Start</h2>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> *</div><div class="line"> * User: Alex Tong(mailto:alex.tong@bstek.com)</div><div class="line"> * Date: 14/12/16</div><div class="line"> * Time: 下午2:25</div><div class="line"> * To change this template use File | Settings | File Templates.</div><div class="line"> */</div><div class="line"><span class="keyword">var</span> portscanner = <span class="built_in">require</span>(<span class="string">'portscanner'</span>), net = <span class="built_in">require</span>(<span class="string">'net'</span>);</div><div class="line"><span class="keyword">var</span> socketClient, HOST = <span class="string">"127.0.0.1"</span>, PORT = <span class="number">5100</span>, _mark = <span class="string">"#?!end!?#"</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">parseMesage</span><span class="params">(data)</span> </span>{</div><div class="line">	<span class="built_in">console</span>.log(data);</div><div class="line">}</div><div class="line"></div><div class="line"><span class="keyword">var</span> writeMsg = {</div><div class="line">	type: <span class="string">"openFile"</span>,</div><div class="line">	body: <span class="string">"/Users/alex/Source/cloudo/branches/node-socket/lib/socket-server.js"</span>,<span class="comment">//body为文件绝对路径</span></div><div class="line">	from: <span class="string">"studio"</span>,</div><div class="line">	version: <span class="string">"0.0.1"</span></div><div class="line">};</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">_formatMessageData</span><span class="params">(msg)</span> </span>{</div><div class="line">	<span class="keyword">return</span> <span class="built_in">JSON</span>.stringify(msg) + _mark;</div><div class="line">}</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">connectEclipseServer</span><span class="params">()</span> </span>{</div><div class="line">	socketClient = <span class="keyword">new</span> net.Socket();</div><div class="line">	socketClient.connect(PORT, HOST);</div><div class="line">	socketClient.setEncoding(<span class="string">"UTF-8"</span>);</div><div class="line">	socketClient.on(<span class="string">'connect'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line">		socketClient.write(_formatMessageData(writeMsg))</div><div class="line">	});</div><div class="line">	socketClient.on(<span class="string">'data'</span>, <span class="function"><span class="keyword">function</span> <span class="params">(data)</span> </span>{</div><div class="line">		<span class="keyword">var</span> newMsg = data.toString();</div><div class="line">		<span class="keyword">var</span> msg = (socketClient._msgCache || <span class="string">""</span>) + newMsg;</div><div class="line">		<span class="keyword">var</span> index = msg.indexOf(_mark);</div><div class="line">		<span class="keyword">if</span> (index &gt;= <span class="number">0</span>) {</div><div class="line">			parseMesage(msg.substring(<span class="number">0</span>, index));</div><div class="line">			socketClient._msgCache = msg.substring(index);</div><div class="line">		} <span class="keyword">else</span> {</div><div class="line">			socketClient._msgCache = msg;</div><div class="line">		}</div><div class="line">	});</div><div class="line">	socketClient.on(<span class="string">"close"</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line">		socketClient._msgCache = <span class="string">""</span>;</div><div class="line">		socketClient.destroy();</div><div class="line">		recursive();</div><div class="line">	});</div><div class="line">	socketClient.on(<span class="string">"error"</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line"></div><div class="line">	});</div><div class="line">}</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">// Checks the status of a single port</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">recursive</span><span class="params">()</span> </span>{</div><div class="line">	portscanner.checkPortStatus(PORT, HOST, <span class="function"><span class="keyword">function</span> <span class="params">(error, status)</span> </span>{</div><div class="line">		<span class="comment">// Status is 'open' if currently in use or 'closed' if available</span></div><div class="line">		<span class="keyword">if</span> (status == <span class="string">"open"</span>) {</div><div class="line">			connectEclipseServer();</div><div class="line">		} <span class="keyword">else</span> {</div><div class="line">			setTimeout(recursive, <span class="number">3000</span>);</div><div class="line">		}</div><div class="line">	});</div><div class="line">}</div><div class="line"></div><div class="line">recursive();</div></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://iworking.me/blog/2014/12/16/nodejs-socket/" data-id="501roraj771cdqo6" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Socket/">Socket</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Tcp/">Tcp</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-centos-install-wordpress" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/blog/2014/12/08/centos-install-wordpress/" class="article-date">
@@ -273,7 +319,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/Hexo/">Hexo</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/Wordpress/">Wordpress</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/Hexo/">Hexo</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/Nodejs/">Nodejs</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/Wordpress/">Wordpress</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -282,7 +328,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Blog/">Blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/ContOS/">ContOS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Linux/">Linux</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/MySql/">MySql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Wordpress/">Wordpress</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Blog/">Blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/ContOS/">ContOS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Linux/">Linux</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/MySql/">MySql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Socket/">Socket</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Tcp/">Tcp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Wordpress/">Wordpress</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -291,7 +337,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/blog/tags/Blog/" style="font-size: 10.00px;">Blog</a><a href="/blog/tags/ContOS/" style="font-size: 10.00px;">ContOS</a><a href="/blog/tags/Hexo/" style="font-size: 10.00px;">Hexo</a><a href="/blog/tags/Linux/" style="font-size: 20.00px;">Linux</a><a href="/blog/tags/MySql/" style="font-size: 10.00px;">MySql</a><a href="/blog/tags/Wordpress/" style="font-size: 10.00px;">Wordpress</a>
+      <a href="/blog/tags/Blog/" style="font-size: 10.00px;">Blog</a><a href="/blog/tags/ContOS/" style="font-size: 10.00px;">ContOS</a><a href="/blog/tags/Hexo/" style="font-size: 10.00px;">Hexo</a><a href="/blog/tags/Linux/" style="font-size: 20.00px;">Linux</a><a href="/blog/tags/MySql/" style="font-size: 10.00px;">MySql</a><a href="/blog/tags/Socket/" style="font-size: 10.00px;">Socket</a><a href="/blog/tags/Tcp/" style="font-size: 10.00px;">Tcp</a><a href="/blog/tags/Wordpress/" style="font-size: 10.00px;">Wordpress</a>
     </div>
   </div>
 
@@ -300,7 +346,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/12/">December 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/12/">December 2014</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -310,6 +356,10 @@ ga('send', 'pageview');
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/blog/2014/12/16/nodejs-socket/">NodeJS Socket 消息传输的那点事儿</a>
+          </li>
         
           <li>
             <a href="/blog/2014/12/08/centos-install-wordpress/">CentOS 安装 Wordpress</a>
