@@ -3,23 +3,56 @@
 <head>
   <meta charset="utf-8">
   
-  <title>NodeJS Socket 消息传输的那点事儿 | iWorking.me</title>
+  <title>显示和恢复隐藏文件 | iWorking.me</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Node JS.
-Quick Start
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667/** * * User: Alex Tong(mailto:alex.tong@bstek.com) *">
+  <meta name="description" content="显示和恢复隐藏文件
+显示隐藏文件
+显示隐藏文件的最简单方法是使用终端。只要打开终端（位于应用程序——实用工具），将以下代码复制进去然后回车 
+1defaults write com.apple.finder AppleShowAllFiles -bool YES
+
+
+Finder需要重启才能应用修改，在终端中接着输入 
+1killall Finder
+
+
+
+
+恢复隐藏文件
+恢复隐藏不可见，在终端中">
 <meta property="og:type" content="article">
-<meta property="og:title" content="NodeJS Socket 消息传输的那点事儿">
-<meta property="og:url" content="http://iworking.me/blog/blog/2014/12/16/nodejs-socket/">
+<meta property="og:title" content="显示和恢复隐藏文件">
+<meta property="og:url" content="http://iworking.me/blog/blog/2012/06/16/mac-show-hide-file/">
 <meta property="og:site_name" content="iWorking.me">
-<meta property="og:description" content="Node JS.
-Quick Start
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667/** * * User: Alex Tong(mailto:alex.tong@bstek.com) *">
+<meta property="og:description" content="显示和恢复隐藏文件
+显示隐藏文件
+显示隐藏文件的最简单方法是使用终端。只要打开终端（位于应用程序——实用工具），将以下代码复制进去然后回车 
+1defaults write com.apple.finder AppleShowAllFiles -bool YES
+
+
+Finder需要重启才能应用修改，在终端中接着输入 
+1killall Finder
+
+
+
+
+恢复隐藏文件
+恢复隐藏不可见，在终端中">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="NodeJS Socket 消息传输的那点事儿">
-<meta name="twitter:description" content="Node JS.
-Quick Start
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667/** * * User: Alex Tong(mailto:alex.tong@bstek.com) *">
+<meta name="twitter:title" content="显示和恢复隐藏文件">
+<meta name="twitter:description" content="显示和恢复隐藏文件
+显示隐藏文件
+显示隐藏文件的最简单方法是使用终端。只要打开终端（位于应用程序——实用工具），将以下代码复制进去然后回车 
+1defaults write com.apple.finder AppleShowAllFiles -bool YES
+
+
+Finder需要重启才能应用修改，在终端中接着输入 
+1killall Finder
+
+
+
+
+恢复隐藏文件
+恢复隐藏不可见，在终端中">
 <meta name="twitter:creator" content="@coolwuxing">
 
   
@@ -94,14 +127,14 @@ ga('send', 'pageview');
   </div>
 </div>
       <div class="outer">
-        <section id="main"><article id="post-nodejs-socket" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-mac-show-hide-file" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/2014/12/16/nodejs-socket/" class="article-date">
-  <time datetime="2014-12-16T04:27:13.000Z" itemprop="datePublished">Dec 16 2014</time>
+    <a href="/blog/2012/06/16/mac-show-hide-file/" class="article-date">
+  <time datetime="2012-06-16T02:27:13.000Z" itemprop="datePublished">Jun 16 2012</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/Nodejs/">Nodejs</a>
+    <a class="article-category-link" href="/blog/categories/Mac/">Mac</a>
   </div>
 
   </div>
@@ -112,7 +145,7 @@ ga('send', 'pageview');
         
   
     <h1 class="article-title" itemprop="name">
-      NodeJS Socket 消息传输的那点事儿
+      显示和恢复隐藏文件
     </h1>
   
 
@@ -120,18 +153,33 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Node JS.</p>
-<h2 id="Quick_Start">Quick Start</h2>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> *</div><div class="line"> * User: Alex Tong(mailto:alex.tong@bstek.com)</div><div class="line"> * Date: 14/12/16</div><div class="line"> * Time: 下午2:25</div><div class="line"> * To change this template use File | Settings | File Templates.</div><div class="line"> */</div><div class="line"><span class="keyword">var</span> portscanner = <span class="built_in">require</span>(<span class="string">'portscanner'</span>), net = <span class="built_in">require</span>(<span class="string">'net'</span>);</div><div class="line"><span class="keyword">var</span> socketClient, HOST = <span class="string">"127.0.0.1"</span>, PORT = <span class="number">5100</span>, _mark = <span class="string">"#?!end!?#"</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">parseMesage</span><span class="params">(data)</span> </span>{</div><div class="line">	<span class="built_in">console</span>.log(data);</div><div class="line">}</div><div class="line"></div><div class="line"><span class="keyword">var</span> writeMsg = {</div><div class="line">	type: <span class="string">"openFile"</span>,</div><div class="line">	body: <span class="string">"/Users/alex/Source/cloudo/branches/node-socket/lib/socket-server.js"</span>,<span class="comment">//body为文件绝对路径</span></div><div class="line">	from: <span class="string">"studio"</span>,</div><div class="line">	version: <span class="string">"0.0.1"</span></div><div class="line">};</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">_formatMessageData</span><span class="params">(msg)</span> </span>{</div><div class="line">	<span class="keyword">return</span> <span class="built_in">JSON</span>.stringify(msg) + _mark;</div><div class="line">}</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">connectEclipseServer</span><span class="params">()</span> </span>{</div><div class="line">	socketClient = <span class="keyword">new</span> net.Socket();</div><div class="line">	socketClient.connect(PORT, HOST);</div><div class="line">	socketClient.setEncoding(<span class="string">"UTF-8"</span>);</div><div class="line">	socketClient.on(<span class="string">'connect'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line">		socketClient.write(_formatMessageData(writeMsg))</div><div class="line">	});</div><div class="line">	socketClient.on(<span class="string">'data'</span>, <span class="function"><span class="keyword">function</span> <span class="params">(data)</span> </span>{</div><div class="line">		<span class="keyword">var</span> newMsg = data.toString();</div><div class="line">		<span class="keyword">var</span> msg = (socketClient._msgCache || <span class="string">""</span>) + newMsg;</div><div class="line">		<span class="keyword">var</span> index = msg.indexOf(_mark);</div><div class="line">		<span class="keyword">if</span> (index &gt;= <span class="number">0</span>) {</div><div class="line">			parseMesage(msg.substring(<span class="number">0</span>, index));</div><div class="line">			socketClient._msgCache = msg.substring(index);</div><div class="line">		} <span class="keyword">else</span> {</div><div class="line">			socketClient._msgCache = msg;</div><div class="line">		}</div><div class="line">	});</div><div class="line">	socketClient.on(<span class="string">"close"</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line">		socketClient._msgCache = <span class="string">""</span>;</div><div class="line">		socketClient.destroy();</div><div class="line">		recursive();</div><div class="line">	});</div><div class="line">	socketClient.on(<span class="string">"error"</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line"></div><div class="line">	});</div><div class="line">}</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">// Checks the status of a single port</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">recursive</span><span class="params">()</span> </span>{</div><div class="line">	portscanner.checkPortStatus(PORT, HOST, <span class="function"><span class="keyword">function</span> <span class="params">(error, status)</span> </span>{</div><div class="line">		<span class="comment">// Status is 'open' if currently in use or 'closed' if available</span></div><div class="line">		<span class="keyword">if</span> (status == <span class="string">"open"</span>) {</div><div class="line">			connectEclipseServer();</div><div class="line">		} <span class="keyword">else</span> {</div><div class="line">			setTimeout(recursive, <span class="number">3000</span>);</div><div class="line">		}</div><div class="line">	});</div><div class="line">}</div><div class="line"></div><div class="line">recursive();</div></pre></td></tr></table></figure>
+        <p>显示和恢复隐藏文件</p>
+<h2 id="显示隐藏文件">显示隐藏文件</h2>
+<p>显示隐藏文件的最简单方法是使用终端。只要打开终端（位于应用程序——实用工具），将以下代码复制进去然后回车 </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">defaults write com.apple.finder AppleShowAllFiles -bool YES</div></pre></td></tr></table></figure>
+
+
+<p>Finder需要重启才能应用修改，在终端中接着输入 </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">killall Finder</div></pre></td></tr></table></figure>
+
+
+
+
+<h2 id="恢复隐藏文件">恢复隐藏文件</h2>
+<p>恢复隐藏不可见，在终端中输入以下代码并回车 </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">defaults write com.apple.finder AppleShowAllFiles -bool NO</div></pre></td></tr></table></figure>
+
+<p>同样Finder需要重启 </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">killall Finder</div></pre></td></tr></table></figure>
 
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://iworking.me/blog/2014/12/16/nodejs-socket/" data-id="501roraj771cdqo6" class="article-share-link">Share</a>
+      <a data-url="http://iworking.me/blog/2012/06/16/mac-show-hide-file/" data-id="q0nr3udcduvrbyny" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Socket/">Socket</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Tcp/">Tcp</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Command/">Command</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Mac/">Mac</a></li></ul>
 
     </footer>
   </div>
@@ -139,20 +187,15 @@ ga('send', 'pageview');
     
 <nav id="article-nav">
   
-    <a href="/blog/2014/12/17/svn-command/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/blog/2014/11/13/BeautifulWebsites/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          SVN Command
+          Beautiful Websites
         
       </div>
     </a>
   
-  
-    <a href="/blog/2014/12/08/centos-install-wordpress/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">CentOS 安装 Wordpress</div>
-    </a>
   
 </nav>
 
@@ -162,7 +205,7 @@ ga('send', 'pageview');
 
 <section id="comments">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="post-nodejs-socket" data-title="NodeJS Socket 消息传输的那点事儿" data-url="http://iworking.me/blog/2014/12/16/nodejs-socket/"></div>
+	<div class="ds-thread" data-thread-key="post-mac-show-hide-file" data-title="显示和恢复隐藏文件" data-url="http://iworking.me/blog/2012/06/16/mac-show-hide-file/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

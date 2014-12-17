@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: Linux | iWorking.me</title>
+  <title>Category: Mac | iWorking.me</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description">
 <meta property="og:type" content="website">
 <meta property="og:title" content="iWorking.me">
-<meta property="og:url" content="http://iworking.me/blog/blog/tags/Linux/">
+<meta property="og:url" content="http://iworking.me/blog/blog/categories/Mac/">
 <meta property="og:site_name" content="iWorking.me">
 <meta property="og:description">
 <meta name="twitter:card" content="summary">
@@ -90,14 +90,14 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
-    <article id="post-centos-install-wordpress" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-mac-show-hide-file" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/2014/12/08/centos-install-wordpress/" class="article-date">
-  <time datetime="2014-12-08T15:11:58.000Z" itemprop="datePublished">Dec 8 2014</time>
+    <a href="/blog/2012/06/16/mac-show-hide-file/" class="article-date">
+  <time datetime="2012-06-16T02:27:13.000Z" itemprop="datePublished">Jun 16 2012</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/Wordpress/">Wordpress</a>
+    <a class="article-category-link" href="/blog/categories/Mac/">Mac</a>
   </div>
 
   </div>
@@ -108,7 +108,7 @@ ga('send', 'pageview');
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/2014/12/08/centos-install-wordpress/">CentOS 安装 Wordpress</a>
+      <a class="article-title" href="/blog/2012/06/16/mac-show-hide-file/">显示和恢复隐藏文件</a>
     </h1>
   
 
@@ -116,86 +116,33 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="安装_Apache">安装 Apache</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum -y install httpd</div></pre></td></tr></table></figure>
+        <p>显示和恢复隐藏文件</p>
+<h2 id="显示隐藏文件">显示隐藏文件</h2>
+<p>显示隐藏文件的最简单方法是使用终端。只要打开终端（位于应用程序——实用工具），将以下代码复制进去然后回车 </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">defaults write com.apple.finder AppleShowAllFiles -bool YES</div></pre></td></tr></table></figure>
+
+
+<p>Finder需要重启才能应用修改，在终端中接着输入 </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">killall Finder</div></pre></td></tr></table></figure>
 
 
 
-<h3 id="安装_PHP">安装 PHP</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum -y install php php-mysql php-gd php-imap php-ldap php-odbc php-pear php-xml php-xmlrpc php-mbstring php-mcrypt php-mssql php-snmp php-soap php-tidy curl curl-devel</div></pre></td></tr></table></figure>
 
+<h2 id="恢复隐藏文件">恢复隐藏文件</h2>
+<p>恢复隐藏不可见，在终端中输入以下代码并回车 </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">defaults write com.apple.finder AppleShowAllFiles -bool NO</div></pre></td></tr></table></figure>
 
-
-<h3 id="安装_mysql-server">安装 mysql-server</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum -y install mysql mysql-server</div></pre></td></tr></table></figure>
-
-
-
-<h3 id="安装_Wordpress">安装 Wordpress</h3>
-<h4 id="下载">下载</h4>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /tmp && wget http://wordpress.org/latest.tar.gz</div></pre></td></tr></table></figure>
-
-
-<h4 id="解压">解压</h4>
-<h4 id="配置_wp-config-php">配置 wp-config.php</h4>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://iworking.me/blog/2014/12/08/centos-install-wordpress/" data-id="4327jze9poq0mrk3" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/ContOS/">ContOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/MySql/">MySql</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Wordpress/">Wordpress</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-linux-scp-command" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2014/12/08/linux-scp-command/" class="article-date">
-  <time datetime="2014-12-08T14:43:22.000Z" itemprop="datePublished">Dec 8 2014</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/Linux/">Linux</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2014/12/08/linux-scp-command/">linx 远程传输</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="远程文件传输到本地">远程文件传输到本地</h3>
-<p>首先cd到要接受的文件夹目录</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#本文中的接受文件夹为</span></div><div class="line">$ scp ssh root@<span class="number">192.168</span>.<span class="number">18.11</span>:/root/wordpress/wp-config-sample.php  .</div></pre></td></tr></table></figure>
-
-<h3 id="本地文件传输到远程">本地文件传输到远程</h3>
-<p>首先cd到要接受的文件夹目录</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#本文中的传输到的远程文件夹为/root/wordpress 远程IP为192.168.18.11 用户名为root</span></div><div class="line">$ scp /Users/alex/wp-config-sample.php root@<span class="number">192.168</span>.<span class="number">18.11</span>:/root/wordpress  .</div></pre></td></tr></table></figure>
+<p>同样Finder需要重启 </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">killall Finder</div></pre></td></tr></table></figure>
 
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://iworking.me/blog/2014/12/08/linux-scp-command/" data-id="g7i1l03udxv7ajku" class="article-share-link">Share</a>
+      <a data-url="http://iworking.me/blog/2012/06/16/mac-show-hide-file/" data-id="q0nr3udcduvrbyny" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Linux/">Linux</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Command/">Command</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Mac/">Mac</a></li></ul>
 
     </footer>
   </div>
