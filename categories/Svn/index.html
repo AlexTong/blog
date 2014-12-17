@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Category: Nodejs | iWorking.me</title>
+  <title>Category: Svn | iWorking.me</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description">
 <meta property="og:type" content="website">
 <meta property="og:title" content="iWorking.me">
-<meta property="og:url" content="http://iworking.me/blog/blog/categories/Nodejs/">
+<meta property="og:url" content="http://iworking.me/blog/blog/categories/Svn/">
 <meta property="og:site_name" content="iWorking.me">
 <meta property="og:description">
 <meta name="twitter:card" content="summary">
@@ -90,14 +90,14 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
-    <article id="post-nodejs-socket" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-svn-command" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/2014/12/16/nodejs-socket/" class="article-date">
-  <time datetime="2014-12-16T04:27:13.000Z" itemprop="datePublished">Dec 16 2014</time>
+    <a href="/blog/2014/12/17/svn-command/" class="article-date">
+  <time datetime="2014-12-17T06:27:13.000Z" itemprop="datePublished">Dec 17 2014</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/Nodejs/">Nodejs</a>
+    <a class="article-category-link" href="/blog/categories/Svn/">Svn</a>
   </div>
 
   </div>
@@ -108,7 +108,7 @@ ga('send', 'pageview');
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/2014/12/16/nodejs-socket/">NodeJS Socket 消息传输的那点事儿</a>
+      <a class="article-title" href="/blog/2014/12/17/svn-command/">SVN Command</a>
     </h1>
   
 
@@ -116,18 +116,21 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Node JS.</p>
-<h2 id="Quick_Start">Quick Start</h2>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> *</div><div class="line"> * User: Alex Tong(mailto:alex.tong@bstek.com)</div><div class="line"> * Date: 14/12/16</div><div class="line"> * Time: 下午2:25</div><div class="line"> * To change this template use File | Settings | File Templates.</div><div class="line"> */</div><div class="line"><span class="keyword">var</span> portscanner = <span class="built_in">require</span>(<span class="string">'portscanner'</span>), net = <span class="built_in">require</span>(<span class="string">'net'</span>);</div><div class="line"><span class="keyword">var</span> socketClient, HOST = <span class="string">"127.0.0.1"</span>, PORT = <span class="number">5100</span>, _mark = <span class="string">"#?!end!?#"</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">parseMesage</span><span class="params">(data)</span> </span>{</div><div class="line">	<span class="built_in">console</span>.log(data);</div><div class="line">}</div><div class="line"></div><div class="line"><span class="keyword">var</span> writeMsg = {</div><div class="line">	type: <span class="string">"openFile"</span>,</div><div class="line">	body: <span class="string">"/Users/alex/Source/cloudo/branches/node-socket/lib/socket-server.js"</span>,<span class="comment">//body为文件绝对路径</span></div><div class="line">	from: <span class="string">"studio"</span>,</div><div class="line">	version: <span class="string">"0.0.1"</span></div><div class="line">};</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">_formatMessageData</span><span class="params">(msg)</span> </span>{</div><div class="line">	<span class="keyword">return</span> <span class="built_in">JSON</span>.stringify(msg) + _mark;</div><div class="line">}</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">connectEclipseServer</span><span class="params">()</span> </span>{</div><div class="line">	socketClient = <span class="keyword">new</span> net.Socket();</div><div class="line">	socketClient.connect(PORT, HOST);</div><div class="line">	socketClient.setEncoding(<span class="string">"UTF-8"</span>);</div><div class="line">	socketClient.on(<span class="string">'connect'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line">		socketClient.write(_formatMessageData(writeMsg))</div><div class="line">	});</div><div class="line">	socketClient.on(<span class="string">'data'</span>, <span class="function"><span class="keyword">function</span> <span class="params">(data)</span> </span>{</div><div class="line">		<span class="keyword">var</span> newMsg = data.toString();</div><div class="line">		<span class="keyword">var</span> msg = (socketClient._msgCache || <span class="string">""</span>) + newMsg;</div><div class="line">		<span class="keyword">var</span> index = msg.indexOf(_mark);</div><div class="line">		<span class="keyword">if</span> (index &gt;= <span class="number">0</span>) {</div><div class="line">			parseMesage(msg.substring(<span class="number">0</span>, index));</div><div class="line">			socketClient._msgCache = msg.substring(index);</div><div class="line">		} <span class="keyword">else</span> {</div><div class="line">			socketClient._msgCache = msg;</div><div class="line">		}</div><div class="line">	});</div><div class="line">	socketClient.on(<span class="string">"close"</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line">		socketClient._msgCache = <span class="string">""</span>;</div><div class="line">		socketClient.destroy();</div><div class="line">		recursive();</div><div class="line">	});</div><div class="line">	socketClient.on(<span class="string">"error"</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line"></div><div class="line">	});</div><div class="line">}</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">// Checks the status of a single port</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">recursive</span><span class="params">()</span> </span>{</div><div class="line">	portscanner.checkPortStatus(PORT, HOST, <span class="function"><span class="keyword">function</span> <span class="params">(error, status)</span> </span>{</div><div class="line">		<span class="comment">// Status is 'open' if currently in use or 'closed' if available</span></div><div class="line">		<span class="keyword">if</span> (status == <span class="string">"open"</span>) {</div><div class="line">			connectEclipseServer();</div><div class="line">		} <span class="keyword">else</span> {</div><div class="line">			setTimeout(recursive, <span class="number">3000</span>);</div><div class="line">		}</div><div class="line">	});</div><div class="line">}</div><div class="line"></div><div class="line">recursive();</div></pre></td></tr></table></figure>
+        <p>SVN 常用Commands.</p>
+<h2 id="新建文件夹">新建文件夹</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">svn mkdir http://svn.***.com/reporstoryName/trunk/node-webkit -m <span class="string">"Make"</span></div></pre></td></tr></table></figure>
+
+<h2 id="创建Breach或tag">创建Breach或tag</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">svn copy http://svn.***.com/reporstoryName/trunk/node-webkit http://svn.***.com/reporstoryName/tags/node-webkit/<span class="number">0.0</span>.<span class="number">1</span> -m <span class="string">"开发版0.0.1"</span></div></pre></td></tr></table></figure>
 
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://iworking.me/blog/2014/12/16/nodejs-socket/" data-id="501roraj771cdqo6" class="article-share-link">Share</a>
+      <a data-url="http://iworking.me/blog/2014/12/17/svn-command/" data-id="6toqu5qcgp3znx82" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Socket/">Socket</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Tcp/">Tcp</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Svn/">Svn</a></li></ul>
 
     </footer>
   </div>
