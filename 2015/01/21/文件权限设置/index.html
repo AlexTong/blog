@@ -3,17 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Category: Svn | iWorking.me</title>
+  <title>Linux文件权限设置 | iWorking.me</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="iWorking.me">
-<meta property="og:url" content="http://iworking.me/blog/blog/categories/Svn/">
+  <meta name="description" content="目前所用到的命令（后续补充）
+1234567891011121314151617181920212223242526#查看文件权限的$ ls -l xxx.xxx （xxx.xxx是文件名）#查看文件夹下的所有文件权限$ ll#只有所有者才有读和写的权限$ chmod 600 filename#只有所有者才有读和写的权限，组群和其他人只有读的权限$ chmod 644 filename#只有所有者">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux文件权限设置">
+<meta property="og:url" content="http://iworking.me/blog/blog/2015/01/21/文件权限设置/">
 <meta property="og:site_name" content="iWorking.me">
-<meta property="og:description">
+<meta property="og:description" content="目前所用到的命令（后续补充）
+1234567891011121314151617181920212223242526#查看文件权限的$ ls -l xxx.xxx （xxx.xxx是文件名）#查看文件夹下的所有文件权限$ ll#只有所有者才有读和写的权限$ chmod 600 filename#只有所有者才有读和写的权限，组群和其他人只有读的权限$ chmod 644 filename#只有所有者">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="iWorking.me">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Linux文件权限设置">
+<meta name="twitter:description" content="目前所用到的命令（后续补充）
+1234567891011121314151617181920212223242526#查看文件权限的$ ls -l xxx.xxx （xxx.xxx是文件名）#查看文件夹下的所有文件权限$ ll#只有所有者才有读和写的权限$ chmod 600 filename#只有所有者才有读和写的权限，组群和其他人只有读的权限$ chmod 644 filename#只有所有者">
 <meta name="twitter:creator" content="@coolwuxing">
 
   
@@ -88,16 +91,14 @@ ga('send', 'pageview');
   </div>
 </div>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-svn-command" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-文件权限设置" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/2014/12/17/svn-command/" class="article-date">
-  <time datetime="2014-12-17T06:27:13.000Z" itemprop="datePublished">Dec 17 2014</time>
+    <a href="/blog/2015/01/21/文件权限设置/" class="article-date">
+  <time datetime="2015-01-21T03:25:13.000Z" itemprop="datePublished">Jan 21 2015</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/Svn/">Svn</a>
+    <a class="article-category-link" href="/blog/categories/Linux/">Linux</a>►<a class="article-category-link" href="/blog/categories/Linux/Command/">Command</a>
   </div>
 
   </div>
@@ -107,8 +108,8 @@ ga('send', 'pageview');
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2014/12/17/svn-command/">SVN Command</a>
+    <h1 class="article-title" itemprop="name">
+      Linux文件权限设置
     </h1>
   
 
@@ -116,30 +117,65 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>SVN 常用Commands.</p>
-<h2 id="新建文件夹">新建文件夹</h2>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">svn mkdir http://svn.***.com/reporstoryName/trunk/node-webkit -m <span class="string">"Make"</span></div></pre></td></tr></table></figure>
+        <h3 id="目前所用到的命令（后续补充）">目前所用到的命令（后续补充）</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#查看文件权限的</span></div><div class="line">$ ls <span class="operator">-l</span> xxx.xxx （xxx.xxx是文件名）</div><div class="line"></div><div class="line"><span class="comment">#查看文件夹下的所有文件权限</span></div><div class="line">$ ll</div><div class="line"></div><div class="line"><span class="comment">#只有所有者才有读和写的权限</span></div><div class="line">$ chmod <span class="number">600</span> filename</div><div class="line"></div><div class="line"><span class="comment">#只有所有者才有读和写的权限，组群和其他人只有读的权限</span></div><div class="line">$ chmod <span class="number">644</span> filename</div><div class="line"></div><div class="line"><span class="comment">#只有所有者才有读，写，执行的权限</span></div><div class="line">$ chmod <span class="number">700</span> filename</div><div class="line"></div><div class="line"><span class="comment">#只有所有者才有读，写，执行的权限，组群和其他人只有读和执行的权限</span></div><div class="line">$ chmod <span class="number">755</span> filename</div><div class="line"></div><div class="line"><span class="comment">#只有所有者才有读，写，执行的权限，组群和其他人只有执行的权限</span></div><div class="line">$ chmod <span class="number">711</span> filename</div><div class="line"></div><div class="line"><span class="comment">#每个人都有读写的权限</span></div><div class="line">$ chmod <span class="number">666</span> filename</div><div class="line"></div><div class="line"><span class="comment">#每个人都有读写和执行的权限</span></div><div class="line">$ chmod <span class="number">777</span> filename</div></pre></td></tr></table></figure>
 
-<h2 id="创建Breach或tag">创建Breach或tag</h2>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">svn copy http://svn.***.com/reporstoryName/trunk/node-webkit http://svn.***.com/reporstoryName/tags/node-webkit/<span class="number">0.0</span>.<span class="number">1</span> -m <span class="string">"开发版0.0.1"</span></div></pre></td></tr></table></figure>
-
+<h4 id="详细介绍">详细介绍</h4>
+<p>　　那么就会出现相类似的信息，主要都是这些：<br>-rw-rw-r—<br>　　一共有10位数<br>　　其中： 最前面那个 - 代表的是类型<br>　　中间那三个 rw- 代表的是所有者（user）<br>　　然后那三个 rw- 代表的是组群（group）<br>　　最后那三个 r— 代表的是其他人（other）<br>　　然后我再解释一下后面那9位数：<br>　　r 表示文件可以被读（read）<br>　　w 表示文件可以被写（write）<br>　　x 表示文件可以被执行（如果它是程序的话）<br>　　- 表示相应的权限还没有被授予<br>　　现在该说说修改文件权限了<br>　　在终端输入：<br>　　chmod o w xxx.xxx<br>　　表示给其他人授予写xxx.xxx这个文件的权限<br>　　chmod go-rw xxx.xxx<br>　　表示删除xxx.xxx中组群和其他人的读和写的权限<br>　　其中：<br>　　u 代表所有者（user）<br>　　g 代表所有者所在的组群（group）<br>　　o 代表其他人，但不是u和g （other）<br>　　a 代表全部的人，也就是包括u，g和o<br>　　r 表示文件可以被读（read）<br>　　w 表示文件可以被写（write）<br>　　x 表示文件可以被执行（如果它是程序的话）<br>　　其中：rwx也可以用数字来代替<br>　　r ——————4<br>　　w —————-2<br>　　x ——————1<br>　　- ——————0<br>　　行动：<br>　　 表示添加权限<br>　　- 表示删除权限<br>　　= 表示使之成为唯一的权限<br>　　当大家都明白了上面的东西之后，那么我们常见的以下的一些权限就很容易都明白了：<br>　　-rw———- (600) 只有所有者才有读和写的权限<br>　　-rw-r—r— (644) 只有所有者才有读和写的权限，组群和其他人只有读的权限<br>　　-rwx——— (700) 只有所有者才有读，写，执行的权限<br>　　-rwxr-xr-x (755) 只有所有者才有读，写，执行的权限，组群和其他人只有读和执行的权限<br>　　-rwx—x—x (711) 只有所有者才有读，写，执行的权限，组群和其他人只有执行的权限<br>　　-rw-rw-rw- (666) 每个人都有读写的权限<br>　　-rwxrwxrwx (777) 每个人都有读写和执行的权限</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://iworking.me/blog/2014/12/17/svn-command/" data-id="6toqu5qcgp3znx82" class="article-share-link">Share</a>
+      <a data-url="http://iworking.me/blog/2015/01/21/文件权限设置/" data-id="mqsotenst05o8wxk" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Svn/">Svn</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Command/">Command</a></li></ul>
 
     </footer>
   </div>
   
+    
+<nav id="article-nav">
+  
+    <a href="/blog/2015/01/21/图片压缩/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          图片无损压缩
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/2015/01/04/检查进程ID和强杀进程/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">检查进程ID和强杀进程</div>
+    </a>
+  
+</nav>
+
+  
 </article>
 
 
-  
-  
+<section id="comments">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="post-文件权限设置" data-title="Linux文件权限设置" data-url="http://iworking.me/blog/2015/01/21/文件权限设置/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+		var duoshuoQuery = {short_name:'alextong'};
+		(function() {
+			var ds = document.createElement('script');
+			ds.type = 'text/javascript';ds.async = true;
+			ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+			ds.charset = 'UTF-8';
+			(document.getElementsByTagName('head')[0]
+					|| document.getElementsByTagName('body')[0]).appendChild(ds);
+		})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</section>
 </section>
         
           <aside id="sidebar">

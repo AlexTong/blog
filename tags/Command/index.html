@@ -90,6 +90,53 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-文件权限设置" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2015/01/21/文件权限设置/" class="article-date">
+  <time datetime="2015-01-21T03:25:13.000Z" itemprop="datePublished">Jan 21 2015</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/Linux/">Linux</a>►<a class="article-category-link" href="/blog/categories/Linux/Command/">Command</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2015/01/21/文件权限设置/">Linux文件权限设置</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="目前所用到的命令（后续补充）">目前所用到的命令（后续补充）</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#查看文件权限的</span></div><div class="line">$ ls <span class="operator">-l</span> xxx.xxx （xxx.xxx是文件名）</div><div class="line"></div><div class="line"><span class="comment">#查看文件夹下的所有文件权限</span></div><div class="line">$ ll</div><div class="line"></div><div class="line"><span class="comment">#只有所有者才有读和写的权限</span></div><div class="line">$ chmod <span class="number">600</span> filename</div><div class="line"></div><div class="line"><span class="comment">#只有所有者才有读和写的权限，组群和其他人只有读的权限</span></div><div class="line">$ chmod <span class="number">644</span> filename</div><div class="line"></div><div class="line"><span class="comment">#只有所有者才有读，写，执行的权限</span></div><div class="line">$ chmod <span class="number">700</span> filename</div><div class="line"></div><div class="line"><span class="comment">#只有所有者才有读，写，执行的权限，组群和其他人只有读和执行的权限</span></div><div class="line">$ chmod <span class="number">755</span> filename</div><div class="line"></div><div class="line"><span class="comment">#只有所有者才有读，写，执行的权限，组群和其他人只有执行的权限</span></div><div class="line">$ chmod <span class="number">711</span> filename</div><div class="line"></div><div class="line"><span class="comment">#每个人都有读写的权限</span></div><div class="line">$ chmod <span class="number">666</span> filename</div><div class="line"></div><div class="line"><span class="comment">#每个人都有读写和执行的权限</span></div><div class="line">$ chmod <span class="number">777</span> filename</div></pre></td></tr></table></figure>
+
+<h4 id="详细介绍">详细介绍</h4>
+<p>　　那么就会出现相类似的信息，主要都是这些：<br>-rw-rw-r—<br>　　一共有10位数<br>　　其中： 最前面那个 - 代表的是类型<br>　　中间那三个 rw- 代表的是所有者（user）<br>　　然后那三个 rw- 代表的是组群（group）<br>　　最后那三个 r— 代表的是其他人（other）<br>　　然后我再解释一下后面那9位数：<br>　　r 表示文件可以被读（read）<br>　　w 表示文件可以被写（write）<br>　　x 表示文件可以被执行（如果它是程序的话）<br>　　- 表示相应的权限还没有被授予<br>　　现在该说说修改文件权限了<br>　　在终端输入：<br>　　chmod o w xxx.xxx<br>　　表示给其他人授予写xxx.xxx这个文件的权限<br>　　chmod go-rw xxx.xxx<br>　　表示删除xxx.xxx中组群和其他人的读和写的权限<br>　　其中：<br>　　u 代表所有者（user）<br>　　g 代表所有者所在的组群（group）<br>　　o 代表其他人，但不是u和g （other）<br>　　a 代表全部的人，也就是包括u，g和o<br>　　r 表示文件可以被读（read）<br>　　w 表示文件可以被写（write）<br>　　x 表示文件可以被执行（如果它是程序的话）<br>　　其中：rwx也可以用数字来代替<br>　　r ——————4<br>　　w —————-2<br>　　x ——————1<br>　　- ——————0<br>　　行动：<br>　　 表示添加权限<br>　　- 表示删除权限<br>　　= 表示使之成为唯一的权限<br>　　当大家都明白了上面的东西之后，那么我们常见的以下的一些权限就很容易都明白了：<br>　　-rw———- (600) 只有所有者才有读和写的权限<br>　　-rw-r—r— (644) 只有所有者才有读和写的权限，组群和其他人只有读的权限<br>　　-rwx——— (700) 只有所有者才有读，写，执行的权限<br>　　-rwxr-xr-x (755) 只有所有者才有读，写，执行的权限，组群和其他人只有读和执行的权限<br>　　-rwx—x—x (711) 只有所有者才有读，写，执行的权限，组群和其他人只有执行的权限<br>　　-rw-rw-rw- (666) 每个人都有读写的权限<br>　　-rwxrwxrwx (777) 每个人都有读写和执行的权限</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://iworking.me/blog/2015/01/21/文件权限设置/" data-id="mqsotenst05o8wxk" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Command/">Command</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-检查进程ID和强杀进程" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/blog/2015/01/04/检查进程ID和强杀进程/" class="article-date">
@@ -258,7 +305,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/Hexo/">Hexo</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/Linux/">Linux</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/Linux/Command/">Command</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/Mac/">Mac</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/Nodejs/">Nodejs</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/Svn/">Svn</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/Wordpress/">Wordpress</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/Hexo/">Hexo</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/Linux/">Linux</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/Linux/Command/">Command</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/Mac/">Mac</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/Nodejs/">Nodejs</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/Svn/">Svn</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/Wordpress/">Wordpress</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -267,7 +314,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Blog/">Blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Command/">Command</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/ContOS/">ContOS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Linux/">Linux</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Mac/">Mac</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/MySql/">MySql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Socket/">Socket</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Svn/">Svn</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Tcp/">Tcp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Wordpress/">Wordpress</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Zip/">Zip</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Blog/">Blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Command/">Command</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/ContOS/">ContOS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Linux/">Linux</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Mac/">Mac</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/MySql/">MySql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Socket/">Socket</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Svn/">Svn</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Tcp/">Tcp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Tools/">Tools</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Wordpress/">Wordpress</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Zip/">Zip</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -276,7 +323,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/blog/tags/Blog/" style="font-size: 13.33px;">Blog</a><a href="/blog/tags/Command/" style="font-size: 20.00px;">Command</a><a href="/blog/tags/ContOS/" style="font-size: 13.33px;">ContOS</a><a href="/blog/tags/Hexo/" style="font-size: 13.33px;">Hexo</a><a href="/blog/tags/Linux/" style="font-size: 16.67px;">Linux</a><a href="/blog/tags/Mac/" style="font-size: 13.33px;">Mac</a><a href="/blog/tags/MySql/" style="font-size: 13.33px;">MySql</a><a href="/blog/tags/OS/" style="font-size: 10.00px;">OS</a><a href="/blog/tags/Socket/" style="font-size: 13.33px;">Socket</a><a href="/blog/tags/Svn/" style="font-size: 13.33px;">Svn</a><a href="/blog/tags/Tcp/" style="font-size: 13.33px;">Tcp</a><a href="/blog/tags/Wordpress/" style="font-size: 13.33px;">Wordpress</a><a href="/blog/tags/Zip/" style="font-size: 13.33px;">Zip</a><a href="/blog/tags/zip/" style="font-size: 10.00px;">zip</a>
+      <a href="/blog/tags/Blog/" style="font-size: 13.33px;">Blog</a><a href="/blog/tags/Command/" style="font-size: 20.00px;">Command</a><a href="/blog/tags/ContOS/" style="font-size: 13.33px;">ContOS</a><a href="/blog/tags/Hexo/" style="font-size: 13.33px;">Hexo</a><a href="/blog/tags/Linux/" style="font-size: 16.67px;">Linux</a><a href="/blog/tags/Mac/" style="font-size: 13.33px;">Mac</a><a href="/blog/tags/MySql/" style="font-size: 13.33px;">MySql</a><a href="/blog/tags/OS/" style="font-size: 10.00px;">OS</a><a href="/blog/tags/Socket/" style="font-size: 13.33px;">Socket</a><a href="/blog/tags/Svn/" style="font-size: 13.33px;">Svn</a><a href="/blog/tags/Tcp/" style="font-size: 13.33px;">Tcp</a><a href="/blog/tags/Tools/" style="font-size: 13.33px;">Tools</a><a href="/blog/tags/Wordpress/" style="font-size: 13.33px;">Wordpress</a><a href="/blog/tags/Zip/" style="font-size: 13.33px;">Zip</a><a href="/blog/tags/zip/" style="font-size: 10.00px;">zip</a>
     </div>
   </div>
 
@@ -285,7 +332,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/01/">January 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/12/">December 2014</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2012/06/">June 2012</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/01/">January 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/12/">December 2014</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2012/06/">June 2012</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -297,6 +344,14 @@ ga('send', 'pageview');
       <ul>
         
           <li>
+            <a href="/blog/2015/01/21/图片压缩/">图片无损压缩</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2015/01/21/文件权限设置/">Linux文件权限设置</a>
+          </li>
+        
+          <li>
             <a href="/blog/2015/01/04/检查进程ID和强杀进程/">检查进程ID和强杀进程</a>
           </li>
         
@@ -306,14 +361,6 @@ ga('send', 'pageview');
         
           <li>
             <a href="/blog/2014/12/17/svn-command/">SVN Command</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2014/12/16/nodejs-socket/">NodeJS Socket 消息传输的那点事儿</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2014/12/08/centos-install-wordpress/">CentOS 安装 Wordpress</a>
           </li>
         
       </ul>
