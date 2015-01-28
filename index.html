@@ -90,6 +90,112 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-Linix创建软连接" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2015/01/28/Linix创建软连接/" class="article-date">
+  <time datetime="2015-01-28T14:43:22.000Z" itemprop="datePublished">Jan 28 2015</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/Linux/">Linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2015/01/28/Linix创建软连接/">linx 创建文件软连接</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="创建文件软连接">创建文件软连接</h3>
+<p>将兄弟目录下的文件软连到本目录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ln <span class="operator">-s</span> ../sites-available/source.txt target.txt</div></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://iworking.me/blog/2015/01/28/Linix创建软连接/" data-id="11th7prpm9c2j2am" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Linux/">Linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Linux搭建基于Nginx的Https服务" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2015/01/28/Linux搭建基于Nginx的Https服务/" class="article-date">
+  <time datetime="2015-01-28T14:43:22.000Z" itemprop="datePublished">Jan 28 2015</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/Linux/">Linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2015/01/28/Linux搭建基于Nginx的Https服务/">Linux搭建基于Nginx的Https服务</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="关于SSL">关于SSL</h3>
+<p>SSL证书是数字证书的一种，类似于驾驶证、护照和营业执照的电子副本。因为配置在服务器上，也称为SSL服务器证书。SSL 证书就是遵守 SSL协议，由受信任的数字证书颁发机构CA（如GlobalSign），在验证服务器身份后颁发，具有服务器身份验证和数据传输加密功能。<br>SSL证书通过在客户端浏览器和Web服务器之间建立一条SSL安全通道（Secure socket layer(SSL)安全协议是由Netscape Communication公司设计开发。该安全协议主要用来提供对用户和服务器的认证；对传送的数据进行加密和隐藏；确保数据在传送中不被改变，即数据的完整性，现已成为该领域中全球化的标准。由于SSL技术已建立到所有主要的浏览器和WEB服务器程序中，因此，仅需安装服务器证书就可以激活该功能了）。即通过它可以激活SSL协议，实现数据信息在客户端和服务器之间的加密传输，可以防止数据信息的泄露。保证了双方传递信息的安全性，而且用户可以通过服务器证书验证他所访问的网站是否是真实可靠。数位签名又名数字标识、签章 (即 Digital Certificate，Digital ID )，提供了一种在网上进行身份验证的方法，是用来标志和证明网路通信双方身份的数字信息文件，概念类似日常生活中的司机驾照或身份证相似。 数字签名主要用于发送安全电子邮件、访问安全站点、网上招标与投标、网上签约、网上订购、安全网上公文传送、网上办公、网上缴费、网上缴税以及网上购物等安全的网上电子交易活动。</p>
+<h3 id="建立服务器密钥">建立服务器密钥</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$  openssl genrsa -out www.example.io.key <span class="number">1024</span></div><div class="line">Generating RSA private key, <span class="number">1024</span> bit long modulus</div><div class="line">...++++++</div><div class="line">.........................................................++++++</div><div class="line">e is <span class="number">65537</span> (<span class="number">0</span>x10001)</div></pre></td></tr></table></figure>
+
+<h3 id="建立服务器公钥">建立服务器公钥</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">$ openssl req -new -key www.example.io.key -out www.example.io.csr</div><div class="line">You are about to be asked to enter information that will be incorporated</div><div class="line">into your certificate request.</div><div class="line">What you are about to enter is what is called a Distinguished Name or a DN.</div><div class="line">There are quite a few fields but you can leave some blank</div><div class="line">For some fields there will be a default value,</div><div class="line">If you enter <span class="string">'.'</span>, the field will be left blank.</div><div class="line">-----</div><div class="line">Country Name (<span class="number">2</span> letter code) [XX]:CN</div><div class="line">State or Province Name (full name) []:ShangHai</div><div class="line">Locality Name (eg, city) [Default City]:ShangHai</div><div class="line">Organization Name (eg, company) [Default Company Ltd]:example</div><div class="line">Organizational Unit Name (eg, section) []:io</div><div class="line">Common Name (eg, your name or your server<span class="string">'s hostname) []:www.example.io</span></div><div class="line">Email Address []:alex.tong@bstek.com</div><div class="line"></div><div class="line">Please enter the following 'extra<span class="string">' attributes</span></div><div class="line">to be sent with your certificate request</div><div class="line">A challenge password []:</div><div class="line">An optional company name []:</div></pre></td></tr></table></figure>
+
+<h3 id="建立服务器证书">建立服务器证书</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ openssl x509 -req -days <span class="number">365</span> -in www.example.io.csr -signkey www.example.io.key -out www.example.io.crt</div><div class="line">Signature ok</div><div class="line">subject=/C=CN/ST=ShangHai/L=ShangHai/O=example/OU=io/CN=www.example.io/emailAddress=******@gmail.com</div><div class="line">Getting Private key</div></pre></td></tr></table></figure>
+
+<p>到此已经创建关于SSL证书和密钥已经完成</p>
+<h3 id="配置Nginx">配置Nginx</h3>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="title">server</span> {</div><div class="line">    <span class="title">listen</span>       <span class="number">443</span> ssl;</div><div class="line">    <span class="title">server_name</span>  www.example.io;</div><div class="line"></div><div class="line">    <span class="title">ssl_certificate</span>      /etc/nginx/ssl/www.example.io.crt;</div><div class="line">    <span class="title">ssl_certificate_key</span>  /etc/nginx/ssl/www.example.io.key;</div><div class="line"></div><div class="line">    <span class="title">ssl_session_cache</span> shared:SSL:<span class="number">1m</span>;</div><div class="line">    <span class="title">ssl_session_timeout</span>  <span class="number">10m</span>;</div><div class="line"></div><div class="line">    <span class="title">ssl_ciphers</span>  HIGH:!aNULL:!MD5;</div><div class="line">    <span class="title">ssl_prefer_server_ciphers</span>   <span class="built_in">on</span>;</div><div class="line"></div><div class="line">    <span class="title">location</span> / {</div><div class="line">        <span class="title">root</span>   /home/www;</div><div class="line">        <span class="title">index</span>  index.html index.htm;</div><div class="line">    }</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<h3 id="重启Nginx">重启Nginx</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service nginx restart</div></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://iworking.me/blog/2015/01/28/Linux搭建基于Nginx的Https服务/" data-id="akr7g7dik8fwi3hq" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Https/">Https</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Nginx/">Nginx</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-图片压缩" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/blog/2015/01/21/图片压缩/" class="article-date">
@@ -483,143 +589,6 @@ ga('send', 'pageview');
 
 
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2014/12/08/hello-world/" class="article-date">
-  <time datetime="2014-12-07T16:04:23.000Z" itemprop="datePublished">Dec 8 2014</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/Hexo/">Hexo</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2014/12/08/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">trobuleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2>
-<h3 id="Create_a_new_post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://iworking.me/blog/2014/12/08/hello-world/" data-id="z4p11ahkj18226tu" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Blog/">Blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Hexo/">Hexo</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-BeautifulWebsites" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2014/11/13/BeautifulWebsites/" class="article-date">
-  <time datetime="2014-11-13T04:27:13.000Z" itemprop="datePublished">Nov 13 2014</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2014/11/13/BeautifulWebsites/">Beautiful Websites</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="http://breather.com" target="_blank" rel="external">http://breather.com</a></p>
-<p><a href="http://www.wps.cn/product/wps2013?from=msg_bubble_beta#" target="_blank" rel="external">http://www.wps.cn/product/wps2013?from=msg_bubble_beta#</a></p>
-<p><a href="http://silverbackapp.com/" target="_blank" rel="external">http://silverbackapp.com/</a></p>
-<p><a href="http://macaw.co/" target="_blank" rel="external">http://macaw.co/</a></p>
-<p><a href="https://codeanywhere.com/" target="_blank" rel="external">https://codeanywhere.com/</a></p>
-<p><a href="http://www.wpzoom.com/" target="_blank" rel="external">http://www.wpzoom.com/</a></p>
-<p><a href="http://www.envato.com/" target="_blank" rel="external">http://www.envato.com/</a></p>
-<p><a href="https://www.pixelapse.com/" target="_blank" rel="external">https://www.pixelapse.com/</a></p>
-<p><a href="http://www.sculptmedia.ae/en/site/index" target="_blank" rel="external">http://www.sculptmedia.ae/en/site/index</a></p>
-<p><a href="https://www.codementor.io/" target="_blank" rel="external">https://www.codementor.io/</a></p>
-<p><a href="https://www.humhub.org/" target="_blank" rel="external">https://www.humhub.org/</a></p>
-<p><a href="http://www.localcrimeapp.com/" target="_blank" rel="external">http://www.localcrimeapp.com/</a></p>
-<p><a href="http://spring.io/" target="_blank" rel="external">http://spring.io/</a></p>
-<p><a href="http://www.sencha.com/" target="_blank" rel="external">http://www.sencha.com/</a></p>
-<p><a href="http://diegojesus.com/" target="_blank" rel="external">http://diegojesus.com/</a></p>
-<p><a href="http://www.caramelbudgie.com/" target="_blank" rel="external">http://www.caramelbudgie.com/</a></p>
-<p><a href="http://www.pagelanes.com/" target="_blank" rel="external">http://www.pagelanes.com/</a></p>
-<p><a href="http://applove.se/" target="_blank" rel="external">http://applove.se/</a></p>
-<p><a href="http://gospecless.com/" target="_blank" rel="external">http://gospecless.com/</a></p>
-<p><a href="http://tapped.com/" target="_blank" rel="external">http://tapped.com/</a></p>
-<p><a href="http://davidboyero.com/en/" target="_blank" rel="external">http://davidboyero.com/en/</a></p>
-<p><a href="http://www.pressking.com/" target="_blank" rel="external">http://www.pressking.com/</a></p>
-<p><a href="http://wearemovingthings.com/" target="_blank" rel="external">http://wearemovingthings.com/</a></p>
-<p><a href="http://www.caramelbudgie.com/" target="_blank" rel="external">http://www.caramelbudgie.com/</a></p>
-<p><a href="http://www.teamgeek.co.za" target="_blank" rel="external">http://www.teamgeek.co.za</a></p>
-<p><a href="http://everylastdrop.co.uk/" target="_blank" rel="external">http://everylastdrop.co.uk/</a></p>
-<p><a href="http://foundation.zurb.com/" target="_blank" rel="external">http://foundation.zurb.com/</a></p>
-<p><a href="http://gumbyframework.com/" target="_blank" rel="external">http://gumbyframework.com/</a></p>
-<p><a href="http://semantic-ui.com/" target="_blank" rel="external">http://semantic-ui.com/</a></p>
-<p><a href="https://www.polymer-project.org/" target="_blank" rel="external">https://www.polymer-project.org/</a></p>
-<p><a href="https://www.dartlang.org/" target="_blank" rel="external">https://www.dartlang.org/</a></p>
-<p><a href="http://wijmo.com/products/" target="_blank" rel="external">http://wijmo.com/products/</a></p>
-<p><a href="https://www.polymer-project.org/" target="_blank" rel="external">https://www.polymer-project.org/</a></p>
-<p><a href="http://getuikit.com/" target="_blank" rel="external">http://getuikit.com/</a></p>
-<p><a href="http://nej.netease.com/" target="_blank" rel="external">http://nej.netease.com/</a></p>
-<p><a href="http://ink.sapo.pt/" target="_blank" rel="external">http://ink.sapo.pt/</a></p>
-<p><a href="http://sproutcore.com/" target="_blank" rel="external">http://sproutcore.com/</a></p>
-<p><a href="http://www.telerik.com/" target="_blank" rel="external">http://www.telerik.com/</a></p>
-<p><a href="http://getbootstrap.com/2.3.2/" target="_blank" rel="external">http://getbootstrap.com/2.3.2/</a></p>
-<p><a href="http://www.cappuccino-project.org/" target="_blank" rel="external">http://www.cappuccino-project.org/</a></p>
-<p><a href="http://www.liferay.com/" target="_blank" rel="external">http://www.liferay.com/</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://iworking.me/blog/2014/11/13/BeautifulWebsites/" data-id="2pfnw648xxwb2dln" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/blog/page/2/">2</a><a class="extend next" rel="next" href="/blog/page/2/">Next &raquo;</a>
@@ -633,7 +602,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/Hexo/">Hexo</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/Linux/">Linux</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/Linux/Command/">Command</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/Mac/">Mac</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/Nodejs/">Nodejs</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/Svn/">Svn</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/Wordpress/">Wordpress</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/Hexo/">Hexo</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/Linux/">Linux</a><span class="category-list-count">6</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/Linux/Command/">Command</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/Mac/">Mac</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/Nodejs/">Nodejs</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/Svn/">Svn</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/Wordpress/">Wordpress</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -642,7 +611,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Blog/">Blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Command/">Command</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/ContOS/">ContOS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Linux/">Linux</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Mac/">Mac</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/MySql/">MySql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Socket/">Socket</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Svn/">Svn</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Tcp/">Tcp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Tools/">Tools</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Wordpress/">Wordpress</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Zip/">Zip</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Blog/">Blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Command/">Command</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/ContOS/">ContOS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Https/">Https</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Linux/">Linux</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Mac/">Mac</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/MySql/">MySql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Nginx/">Nginx</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Socket/">Socket</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Svn/">Svn</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Tcp/">Tcp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Tools/">Tools</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Wordpress/">Wordpress</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Zip/">Zip</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -651,7 +620,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/blog/tags/Blog/" style="font-size: 13.33px;">Blog</a><a href="/blog/tags/Command/" style="font-size: 20.00px;">Command</a><a href="/blog/tags/ContOS/" style="font-size: 13.33px;">ContOS</a><a href="/blog/tags/Hexo/" style="font-size: 13.33px;">Hexo</a><a href="/blog/tags/Linux/" style="font-size: 16.67px;">Linux</a><a href="/blog/tags/Mac/" style="font-size: 13.33px;">Mac</a><a href="/blog/tags/MySql/" style="font-size: 13.33px;">MySql</a><a href="/blog/tags/OS/" style="font-size: 10.00px;">OS</a><a href="/blog/tags/Socket/" style="font-size: 13.33px;">Socket</a><a href="/blog/tags/Svn/" style="font-size: 13.33px;">Svn</a><a href="/blog/tags/Tcp/" style="font-size: 13.33px;">Tcp</a><a href="/blog/tags/Tools/" style="font-size: 13.33px;">Tools</a><a href="/blog/tags/Wordpress/" style="font-size: 13.33px;">Wordpress</a><a href="/blog/tags/Zip/" style="font-size: 13.33px;">Zip</a><a href="/blog/tags/zip/" style="font-size: 10.00px;">zip</a>
+      <a href="/blog/tags/Blog/" style="font-size: 15.00px;">Blog</a><a href="/blog/tags/Command/" style="font-size: 20.00px;">Command</a><a href="/blog/tags/ContOS/" style="font-size: 15.00px;">ContOS</a><a href="/blog/tags/Hexo/" style="font-size: 15.00px;">Hexo</a><a href="/blog/tags/Https/" style="font-size: 15.00px;">Https</a><a href="/blog/tags/Linux/" style="font-size: 20.00px;">Linux</a><a href="/blog/tags/Mac/" style="font-size: 15.00px;">Mac</a><a href="/blog/tags/MySql/" style="font-size: 15.00px;">MySql</a><a href="/blog/tags/Nginx/" style="font-size: 15.00px;">Nginx</a><a href="/blog/tags/OS/" style="font-size: 10.00px;">OS</a><a href="/blog/tags/Socket/" style="font-size: 15.00px;">Socket</a><a href="/blog/tags/Svn/" style="font-size: 15.00px;">Svn</a><a href="/blog/tags/Tcp/" style="font-size: 15.00px;">Tcp</a><a href="/blog/tags/Tools/" style="font-size: 15.00px;">Tools</a><a href="/blog/tags/Wordpress/" style="font-size: 15.00px;">Wordpress</a><a href="/blog/tags/Zip/" style="font-size: 15.00px;">Zip</a><a href="/blog/tags/zip/" style="font-size: 10.00px;">zip</a>
     </div>
   </div>
 
@@ -660,7 +629,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/01/">January 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/12/">December 2014</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2012/06/">June 2012</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/01/">January 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/12/">December 2014</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2012/06/">June 2012</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -672,6 +641,14 @@ ga('send', 'pageview');
       <ul>
         
           <li>
+            <a href="/blog/2015/01/28/Linix创建软连接/">linx 创建文件软连接</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2015/01/28/Linux搭建基于Nginx的Https服务/">Linux搭建基于Nginx的Https服务</a>
+          </li>
+        
+          <li>
             <a href="/blog/2015/01/21/图片压缩/">图片无损压缩</a>
           </li>
         
@@ -681,14 +658,6 @@ ga('send', 'pageview');
         
           <li>
             <a href="/blog/2015/01/04/检查进程ID和强杀进程/">检查进程ID和强杀进程</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2014/12/31/7z-command-line/">7z-命令行</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2014/12/17/svn-command/">SVN Command</a>
           </li>
         
       </ul>

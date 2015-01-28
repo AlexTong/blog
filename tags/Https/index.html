@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: ContOS | iWorking.me</title>
+  <title>Tag: Https | iWorking.me</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description">
 <meta property="og:type" content="website">
 <meta property="og:title" content="iWorking.me">
-<meta property="og:url" content="http://iworking.me/blog/blog/tags/ContOS/">
+<meta property="og:url" content="http://iworking.me/blog/blog/tags/Https/">
 <meta property="og:site_name" content="iWorking.me">
 <meta property="og:description">
 <meta name="twitter:card" content="summary">
@@ -90,14 +90,14 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
-    <article id="post-centos-install-wordpress" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-Linux搭建基于Nginx的Https服务" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/2014/12/08/centos-install-wordpress/" class="article-date">
-  <time datetime="2014-12-08T15:11:58.000Z" itemprop="datePublished">Dec 8 2014</time>
+    <a href="/blog/2015/01/28/Linux搭建基于Nginx的Https服务/" class="article-date">
+  <time datetime="2015-01-28T14:43:22.000Z" itemprop="datePublished">Jan 28 2015</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/Wordpress/">Wordpress</a>
+    <a class="article-category-link" href="/blog/categories/Linux/">Linux</a>
   </div>
 
   </div>
@@ -108,7 +108,7 @@ ga('send', 'pageview');
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/2014/12/08/centos-install-wordpress/">CentOS 安装 Wordpress</a>
+      <a class="article-title" href="/blog/2015/01/28/Linux搭建基于Nginx的Https服务/">Linux搭建基于Nginx的Https服务</a>
     </h1>
   
 
@@ -116,36 +116,32 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="安装_Apache">安装 Apache</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum -y install httpd</div></pre></td></tr></table></figure>
+        <h3 id="关于SSL">关于SSL</h3>
+<p>SSL证书是数字证书的一种，类似于驾驶证、护照和营业执照的电子副本。因为配置在服务器上，也称为SSL服务器证书。SSL 证书就是遵守 SSL协议，由受信任的数字证书颁发机构CA（如GlobalSign），在验证服务器身份后颁发，具有服务器身份验证和数据传输加密功能。<br>SSL证书通过在客户端浏览器和Web服务器之间建立一条SSL安全通道（Secure socket layer(SSL)安全协议是由Netscape Communication公司设计开发。该安全协议主要用来提供对用户和服务器的认证；对传送的数据进行加密和隐藏；确保数据在传送中不被改变，即数据的完整性，现已成为该领域中全球化的标准。由于SSL技术已建立到所有主要的浏览器和WEB服务器程序中，因此，仅需安装服务器证书就可以激活该功能了）。即通过它可以激活SSL协议，实现数据信息在客户端和服务器之间的加密传输，可以防止数据信息的泄露。保证了双方传递信息的安全性，而且用户可以通过服务器证书验证他所访问的网站是否是真实可靠。数位签名又名数字标识、签章 (即 Digital Certificate，Digital ID )，提供了一种在网上进行身份验证的方法，是用来标志和证明网路通信双方身份的数字信息文件，概念类似日常生活中的司机驾照或身份证相似。 数字签名主要用于发送安全电子邮件、访问安全站点、网上招标与投标、网上签约、网上订购、安全网上公文传送、网上办公、网上缴费、网上缴税以及网上购物等安全的网上电子交易活动。</p>
+<h3 id="建立服务器密钥">建立服务器密钥</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$  openssl genrsa -out www.example.io.key <span class="number">1024</span></div><div class="line">Generating RSA private key, <span class="number">1024</span> bit long modulus</div><div class="line">...++++++</div><div class="line">.........................................................++++++</div><div class="line">e is <span class="number">65537</span> (<span class="number">0</span>x10001)</div></pre></td></tr></table></figure>
 
+<h3 id="建立服务器公钥">建立服务器公钥</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">$ openssl req -new -key www.example.io.key -out www.example.io.csr</div><div class="line">You are about to be asked to enter information that will be incorporated</div><div class="line">into your certificate request.</div><div class="line">What you are about to enter is what is called a Distinguished Name or a DN.</div><div class="line">There are quite a few fields but you can leave some blank</div><div class="line">For some fields there will be a default value,</div><div class="line">If you enter <span class="string">'.'</span>, the field will be left blank.</div><div class="line">-----</div><div class="line">Country Name (<span class="number">2</span> letter code) [XX]:CN</div><div class="line">State or Province Name (full name) []:ShangHai</div><div class="line">Locality Name (eg, city) [Default City]:ShangHai</div><div class="line">Organization Name (eg, company) [Default Company Ltd]:example</div><div class="line">Organizational Unit Name (eg, section) []:io</div><div class="line">Common Name (eg, your name or your server<span class="string">'s hostname) []:www.example.io</span></div><div class="line">Email Address []:alex.tong@bstek.com</div><div class="line"></div><div class="line">Please enter the following 'extra<span class="string">' attributes</span></div><div class="line">to be sent with your certificate request</div><div class="line">A challenge password []:</div><div class="line">An optional company name []:</div></pre></td></tr></table></figure>
 
+<h3 id="建立服务器证书">建立服务器证书</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ openssl x509 -req -days <span class="number">365</span> -in www.example.io.csr -signkey www.example.io.key -out www.example.io.crt</div><div class="line">Signature ok</div><div class="line">subject=/C=CN/ST=ShangHai/L=ShangHai/O=example/OU=io/CN=www.example.io/emailAddress=******@gmail.com</div><div class="line">Getting Private key</div></pre></td></tr></table></figure>
 
-<h3 id="安装_PHP">安装 PHP</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum -y install php php-mysql php-gd php-imap php-ldap php-odbc php-pear php-xml php-xmlrpc php-mbstring php-mcrypt php-mssql php-snmp php-soap php-tidy curl curl-devel</div></pre></td></tr></table></figure>
+<p>到此已经创建关于SSL证书和密钥已经完成</p>
+<h3 id="配置Nginx">配置Nginx</h3>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="title">server</span> {</div><div class="line">    <span class="title">listen</span>       <span class="number">443</span> ssl;</div><div class="line">    <span class="title">server_name</span>  www.example.io;</div><div class="line"></div><div class="line">    <span class="title">ssl_certificate</span>      /etc/nginx/ssl/www.example.io.crt;</div><div class="line">    <span class="title">ssl_certificate_key</span>  /etc/nginx/ssl/www.example.io.key;</div><div class="line"></div><div class="line">    <span class="title">ssl_session_cache</span> shared:SSL:<span class="number">1m</span>;</div><div class="line">    <span class="title">ssl_session_timeout</span>  <span class="number">10m</span>;</div><div class="line"></div><div class="line">    <span class="title">ssl_ciphers</span>  HIGH:!aNULL:!MD5;</div><div class="line">    <span class="title">ssl_prefer_server_ciphers</span>   <span class="built_in">on</span>;</div><div class="line"></div><div class="line">    <span class="title">location</span> / {</div><div class="line">        <span class="title">root</span>   /home/www;</div><div class="line">        <span class="title">index</span>  index.html index.htm;</div><div class="line">    }</div><div class="line">}</div></pre></td></tr></table></figure>
 
+<h3 id="重启Nginx">重启Nginx</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service nginx restart</div></pre></td></tr></table></figure>
 
-
-<h3 id="安装_mysql-server">安装 mysql-server</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum -y install mysql mysql-server</div></pre></td></tr></table></figure>
-
-
-
-<h3 id="安装_Wordpress">安装 Wordpress</h3>
-<h4 id="下载">下载</h4>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /tmp && wget http://wordpress.org/latest.tar.gz</div></pre></td></tr></table></figure>
-
-
-<h4 id="解压">解压</h4>
-<h4 id="配置_wp-config-php">配置 wp-config.php</h4>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://iworking.me/blog/2014/12/08/centos-install-wordpress/" data-id="4327jze9poq0mrk3" class="article-share-link">Share</a>
+      <a data-url="http://iworking.me/blog/2015/01/28/Linux搭建基于Nginx的Https服务/" data-id="akr7g7dik8fwi3hq" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/ContOS/">ContOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/MySql/">MySql</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Wordpress/">Wordpress</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Https/">Https</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Nginx/">Nginx</a></li></ul>
 
     </footer>
   </div>
