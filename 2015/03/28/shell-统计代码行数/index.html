@@ -3,26 +3,32 @@
 <head>
   <meta charset="utf-8">
   
-  <title>MYSQL Command | iWorking.me</title>
+  <title>Shell 命令行统计代码行数 | iWorking.me</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="MYSQL 常用Commands.
-创建数据库
-After we unzip the wecenter files, they will be in a directory called wecenter in the home directory.
-Now we need to switch gears for a moment and create a new MySQL directory">
+  <meta name="description" content="Shell 命令行统计代码行数
+统计指定文件夹下的总代码行数
+12# cd 到工程目录下$ find . -name '*.*'|xargs cat|wc -l
+
+统计指定文件夹下的制定类型文件代码行数
+12# cd 到工程目录下$ find . -name '*.java'|xargs cat|wc -l">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MYSQL Command">
-<meta property="og:url" content="http://iworking.me/blog/blog/2014/12/17/mysql-command/">
+<meta property="og:title" content="Shell 命令行统计代码行数">
+<meta property="og:url" content="http://iworking.me/blog/blog/2015/03/28/shell-统计代码行数/">
 <meta property="og:site_name" content="iWorking.me">
-<meta property="og:description" content="MYSQL 常用Commands.
-创建数据库
-After we unzip the wecenter files, they will be in a directory called wecenter in the home directory.
-Now we need to switch gears for a moment and create a new MySQL directory">
+<meta property="og:description" content="Shell 命令行统计代码行数
+统计指定文件夹下的总代码行数
+12# cd 到工程目录下$ find . -name '*.*'|xargs cat|wc -l
+
+统计指定文件夹下的制定类型文件代码行数
+12# cd 到工程目录下$ find . -name '*.java'|xargs cat|wc -l">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MYSQL Command">
-<meta name="twitter:description" content="MYSQL 常用Commands.
-创建数据库
-After we unzip the wecenter files, they will be in a directory called wecenter in the home directory.
-Now we need to switch gears for a moment and create a new MySQL directory">
+<meta name="twitter:title" content="Shell 命令行统计代码行数">
+<meta name="twitter:description" content="Shell 命令行统计代码行数
+统计指定文件夹下的总代码行数
+12# cd 到工程目录下$ find . -name '*.*'|xargs cat|wc -l
+
+统计指定文件夹下的制定类型文件代码行数
+12# cd 到工程目录下$ find . -name '*.java'|xargs cat|wc -l">
 <meta name="twitter:creator" content="@coolwuxing">
 
   
@@ -97,14 +103,14 @@ ga('send', 'pageview');
   </div>
 </div>
       <div class="outer">
-        <section id="main"><article id="post-mysql-command" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-shell-统计代码行数" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/2014/12/17/mysql-command/" class="article-date">
-  <time datetime="2014-12-17T06:27:13.000Z" itemprop="datePublished">Dec 17 2014</time>
+    <a href="/blog/2015/03/28/shell-统计代码行数/" class="article-date">
+  <time datetime="2015-03-28T14:43:22.000Z" itemprop="datePublished">Mar 28 2015</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/MYSQL/">MYSQL</a>
+    <a class="article-category-link" href="/blog/categories/Linux/">Linux</a>
   </div>
 
   </div>
@@ -115,7 +121,7 @@ ga('send', 'pageview');
         
   
     <h1 class="article-title" itemprop="name">
-      MYSQL Command
+      Shell 命令行统计代码行数
     </h1>
   
 
@@ -123,39 +129,21 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>MYSQL 常用Commands.</p>
-<h2 id="创建数据库">创建数据库</h2>
-<p>After we unzip the wecenter files, they will be in a directory called wecenter in the home directory.</p>
-<p>Now we need to switch gears for a moment and create a new MySQL directory for wecenter.</p>
-<p>Go ahead and log into the MySQL Shell:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql -u root -p</div></pre></td></tr></table></figure>
+        <h3 id="Shell_命令行统计代码行数">Shell 命令行统计代码行数</h3>
+<p>统计指定文件夹下的总代码行数</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># cd 到工程目录下</span></div><div class="line">$ find . -name <span class="string">"*.*"</span>|xargs cat|wc <span class="operator">-l</span></div></pre></td></tr></table></figure>
 
-<p>Login using your MySQL root password, and then we need to create a wecenter database, a user in that database, and give that user a new password. Keep in mind that all MySQL commands must end with semi-colon. First, let’s make the database (I’m calling mine wecenter for simplicity’s sake; feel free to give it whatever name you choose):</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">CREATE DATABASE wecenter;</div><div class="line">Query OK, <span class="number">1</span> row affected (<span class="number">0.00</span> sec)</div></pre></td></tr></table></figure>
-
-<p>Then we need to create the new user. You can replace the database, name, and password, with whatever you prefer:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">CREATE USER wecenteruser@localhost;</div><div class="line">Query OK, <span class="number">0</span> rows affected (<span class="number">0.00</span> sec)</div></pre></td></tr></table></figure>
-
-<p>Set the password for your new user:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">SET PASSWORD FOR wecenteruser@localhost= PASSWORD(<span class="string">"password"</span>);</div><div class="line">Query OK, <span class="number">0</span> rows affected (<span class="number">0.00</span> sec)</div></pre></td></tr></table></figure>
-
-<p>Finish up by granting all privileges to the new user. Without this command, the wordpress installer will not be able to start up:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">GRANT ALL PRIVILEGES ON wecenter.* TO wecenteruser@localhost IDENTIFIED BY <span class="string">'password'</span>;</div><div class="line">Query OK, <span class="number">0</span> rows affected (<span class="number">0.00</span> sec)</div></pre></td></tr></table></figure>
-
-<p>Then refresh MySQL:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">FLUSH PRIVILEGES;</div><div class="line">Query OK, <span class="number">0</span> rows affected (<span class="number">0.00</span> sec)</div></pre></td></tr></table></figure>
-
-<p>Exit out of the MySQL shell:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">exit</span></div></pre></td></tr></table></figure>
+<p>统计指定文件夹下的制定类型文件代码行数</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># cd 到工程目录下</span></div><div class="line">$ find . -name <span class="string">"*.java"</span>|xargs cat|wc <span class="operator">-l</span></div></pre></td></tr></table></figure>
 
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://iworking.me/blog/2014/12/17/mysql-command/" data-id="98slh769bhe9nqev" class="article-share-link">Share</a>
+      <a data-url="http://iworking.me/blog/2015/03/28/shell-统计代码行数/" data-id="9a6y91gby5uretaz" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/MYSQL/">MYSQL</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Linux/">Linux</a></li></ul>
 
     </footer>
   </div>
@@ -163,19 +151,10 @@ ga('send', 'pageview');
     
 <nav id="article-nav">
   
-    <a href="/blog/2014/12/17/svn-command/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          SVN Command
-        
-      </div>
-    </a>
   
-  
-    <a href="/blog/2014/12/16/nodejs-socket/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/blog/2015/03/18/maven-project-build/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">NodeJS Socket 消息传输的那点事儿</div>
+      <div class="article-nav-title">Maven打war包 配置</div>
     </a>
   
 </nav>
@@ -186,7 +165,7 @@ ga('send', 'pageview');
 
 <section id="comments">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="post-mysql-command" data-title="MYSQL Command" data-url="http://iworking.me/blog/2014/12/17/mysql-command/"></div>
+	<div class="ds-thread" data-thread-key="post-shell-统计代码行数" data-title="Shell 命令行统计代码行数" data-url="http://iworking.me/blog/2015/03/28/shell-统计代码行数/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
