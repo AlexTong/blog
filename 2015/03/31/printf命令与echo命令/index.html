@@ -3,23 +3,29 @@
 <head>
   <meta charset="utf-8">
   
-  <title>linx 创建文件软连接 | iWorking.me</title>
+  <title>printf命令与echo命令至区别 | iWorking.me</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="创建文件软连接
-将兄弟目录下的文件软连到本目录
-1$ ln -s ../sites-available/source.txt target.txt">
+  <meta name="description" content="printf命令
+printf 命令用于格式化输出， 是echo命令的增强版。它是C语言printf()库函数的一个有限的变形，并且在语法上有些不同。注意：printf 由 POSIX 标准所定义，移植性要比 echo 好。如同 echo 命令，printf 命令也可以输出简单的字符串：
+12$printf 'Hello, Shell\n'Hello, Shell
+
+printf 不像 echo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="linx 创建文件软连接">
-<meta property="og:url" content="http://iworking.me/blog/blog/2015/01/28/Linix创建软连接/">
+<meta property="og:title" content="printf命令与echo命令至区别">
+<meta property="og:url" content="http://iworking.me/blog/blog/2015/03/31/printf命令与echo命令/">
 <meta property="og:site_name" content="iWorking.me">
-<meta property="og:description" content="创建文件软连接
-将兄弟目录下的文件软连到本目录
-1$ ln -s ../sites-available/source.txt target.txt">
+<meta property="og:description" content="printf命令
+printf 命令用于格式化输出， 是echo命令的增强版。它是C语言printf()库函数的一个有限的变形，并且在语法上有些不同。注意：printf 由 POSIX 标准所定义，移植性要比 echo 好。如同 echo 命令，printf 命令也可以输出简单的字符串：
+12$printf 'Hello, Shell\n'Hello, Shell
+
+printf 不像 echo">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="linx 创建文件软连接">
-<meta name="twitter:description" content="创建文件软连接
-将兄弟目录下的文件软连到本目录
-1$ ln -s ../sites-available/source.txt target.txt">
+<meta name="twitter:title" content="printf命令与echo命令至区别">
+<meta name="twitter:description" content="printf命令
+printf 命令用于格式化输出， 是echo命令的增强版。它是C语言printf()库函数的一个有限的变形，并且在语法上有些不同。注意：printf 由 POSIX 标准所定义，移植性要比 echo 好。如同 echo 命令，printf 命令也可以输出简单的字符串：
+12$printf 'Hello, Shell\n'Hello, Shell
+
+printf 不像 echo">
 <meta name="twitter:creator" content="@coolwuxing">
 
   
@@ -94,14 +100,14 @@ ga('send', 'pageview');
   </div>
 </div>
       <div class="outer">
-        <section id="main"><article id="post-Linix创建软连接" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-printf命令与echo命令" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/2015/01/28/Linix创建软连接/" class="article-date">
-  <time datetime="2015-01-28T14:43:22.000Z" itemprop="datePublished">Jan 28 2015</time>
+    <a href="/blog/2015/03/31/printf命令与echo命令/" class="article-date">
+  <time datetime="2015-03-31T03:24:00.000Z" itemprop="datePublished">Mar 31 2015</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/Linux/">Linux</a>
+    <a class="article-category-link" href="/blog/categories/Linux/">Linux</a>►<a class="article-category-link" href="/blog/categories/Linux/Command/">Command</a>
   </div>
 
   </div>
@@ -112,7 +118,7 @@ ga('send', 'pageview');
         
   
     <h1 class="article-title" itemprop="name">
-      linx 创建文件软连接
+      printf命令与echo命令至区别
     </h1>
   
 
@@ -120,18 +126,24 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="创建文件软连接">创建文件软连接</h3>
-<p>将兄弟目录下的文件软连到本目录</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ln <span class="operator">-s</span> ../sites-available/source.txt target.txt</div></pre></td></tr></table></figure>
+        <h3 id="printf命令">printf命令</h3>
+<p>printf 命令用于格式化输出， 是echo命令的增强版。它是C语言printf()库函数的一个有限的变形，并且在语法上有些不同。<br>注意：printf 由 POSIX 标准所定义，移植性要比 echo 好。<br>如同 echo 命令，printf 命令也可以输出简单的字符串：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$printf</span> <span class="string">"Hello, Shell\n"</span></div><div class="line">Hello, Shell</div></pre></td></tr></table></figure>
+
+<p>printf 不像 echo 那样会自动换行，必须显式添加换行符(\n)。<br>printf 命令的语法：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#format-string 为格式控制字符串，arguments 为参数列表。</span></div><div class="line"><span class="built_in">printf</span>  format-string  [arguments...]</div></pre></td></tr></table></figure>
+
+<p>format-string 可以没有引号，但最好加上，单引号双引号均可。<br>参数多于格式控制符(%)时，format-string 可以重用，可以将所有参数都转换。<br>arguments 使用空格分隔，不用逗号。<br>请看下面的例子：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># format-string为双引号</span></div><div class="line">$ <span class="built_in">printf</span> <span class="string">"%d %s\n"</span> <span class="number">1</span> <span class="string">"abc"</span></div><div class="line"><span class="number">1</span> abc</div><div class="line"><span class="comment"># 单引号与双引号效果一样 </span></div><div class="line">$ <span class="built_in">printf</span> <span class="string">'%d %s\n'</span> <span class="number">1</span> <span class="string">"abc"</span> </div><div class="line"><span class="number">1</span> abc</div><div class="line"><span class="comment"># 没有引号也可以输出</span></div><div class="line">$ <span class="built_in">printf</span> %s abcdef</div><div class="line">abcdef</div><div class="line"><span class="comment"># 格式只指定了一个参数，但多出的参数仍然会按照该格式输出，format-string 被重用</span></div><div class="line">$ <span class="built_in">printf</span> %s abc def</div><div class="line">abcdef</div><div class="line">$ <span class="built_in">printf</span> <span class="string">"%s\n"</span> abc def</div><div class="line">abc</div><div class="line">def</div><div class="line">$ <span class="built_in">printf</span> <span class="string">"%s %s %s\n"</span> a b c d e f g h i j</div><div class="line">a b c</div><div class="line">d e f</div><div class="line">g h i</div><div class="line">j</div><div class="line"><span class="comment"># 如果没有 arguments，那么 %s 用NULL代替，%d 用 0 代替</span></div><div class="line">$ <span class="built_in">printf</span> <span class="string">"%s and %d \n"</span> </div><div class="line">and <span class="number">0</span></div><div class="line"><span class="comment"># 如果以 %d 的格式来显示字符串，那么会有警告，提示无效的数字，此时默认置为 0</span></div><div class="line">$ <span class="built_in">printf</span> <span class="string">"The first program always prints'%s,%d\n'"</span> Hello Shell</div><div class="line">-bash: <span class="built_in">printf</span>: Shell: invalid number</div><div class="line">The first program always prints <span class="string">'Hello,0'</span></div></pre></td></tr></table></figure>
 
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://iworking.me/blog/2015/01/28/Linix创建软连接/" data-id="qmq7vbqfklcgha72" class="article-share-link">Share</a>
+      <a data-url="http://iworking.me/blog/2015/03/31/printf命令与echo命令/" data-id="vctjw2up39f06tbp" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Linux/">Linux</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Command/">Command</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Linux/">Linux</a></li></ul>
 
     </footer>
   </div>
@@ -139,19 +151,10 @@ ga('send', 'pageview');
     
 <nav id="article-nav">
   
-    <a href="/blog/2015/01/28/Linux搭建基于Nginx的Https服务/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Linux搭建基于Nginx的Https服务
-        
-      </div>
-    </a>
   
-  
-    <a href="/blog/2015/01/21/文件权限设置/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/blog/2015/03/28/shell-统计代码行数/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Linux文件权限设置</div>
+      <div class="article-nav-title">Shell 命令行统计代码行数</div>
     </a>
   
 </nav>
@@ -162,7 +165,7 @@ ga('send', 'pageview');
 
 <section id="comments">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="post-Linix创建软连接" data-title="linx 创建文件软连接" data-url="http://iworking.me/blog/2015/01/28/Linix创建软连接/"></div>
+	<div class="ds-thread" data-thread-key="post-printf命令与echo命令" data-title="printf命令与echo命令至区别" data-url="http://iworking.me/blog/2015/03/31/printf命令与echo命令/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

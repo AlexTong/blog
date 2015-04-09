@@ -90,6 +90,73 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-mysql-command" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2014/12/17/mysql-command/" class="article-date">
+  <time datetime="2014-12-17T06:27:13.000Z" itemprop="datePublished">Dec 17 2014</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/MYSQL/">MYSQL</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2014/12/17/mysql-command/">MYSQL Command</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>MYSQL 常用Commands.</p>
+<h2 id="创建数据库">创建数据库</h2>
+<p>After we unzip the wecenter files, they will be in a directory called wecenter in the home directory.</p>
+<p>Now we need to switch gears for a moment and create a new MySQL directory for wecenter.</p>
+<p>Go ahead and log into the MySQL Shell:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql -u root -p</div></pre></td></tr></table></figure>
+
+<p>Login using your MySQL root password, and then we need to create a wecenter database, a user in that database, and give that user a new password. Keep in mind that all MySQL commands must end with semi-colon. First, let’s make the database (I’m calling mine wecenter for simplicity’s sake; feel free to give it whatever name you choose):</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">CREATE DATABASE wecenter;</div><div class="line">Query OK, <span class="number">1</span> row affected (<span class="number">0.00</span> sec)</div></pre></td></tr></table></figure>
+
+<p>Then we need to create the new user. You can replace the database, name, and password, with whatever you prefer:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">CREATE USER wecenteruser@localhost;</div><div class="line">Query OK, <span class="number">0</span> rows affected (<span class="number">0.00</span> sec)</div></pre></td></tr></table></figure>
+
+<p>Set the password for your new user:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">SET PASSWORD FOR wecenteruser@localhost= PASSWORD(<span class="string">"password"</span>);</div><div class="line">Query OK, <span class="number">0</span> rows affected (<span class="number">0.00</span> sec)</div></pre></td></tr></table></figure>
+
+<p>Finish up by granting all privileges to the new user. Without this command, the wordpress installer will not be able to start up:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">GRANT ALL PRIVILEGES ON wecenter.* TO wecenteruser@localhost IDENTIFIED BY <span class="string">'password'</span>;</div><div class="line">Query OK, <span class="number">0</span> rows affected (<span class="number">0.00</span> sec)</div></pre></td></tr></table></figure>
+
+<p>Then refresh MySQL:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">FLUSH PRIVILEGES;</div><div class="line">Query OK, <span class="number">0</span> rows affected (<span class="number">0.00</span> sec)</div></pre></td></tr></table></figure>
+
+<p>Exit out of the MySQL shell:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">exit</span></div></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://iworking.me/blog/2014/12/17/mysql-command/" data-id="98slh769bhe9nqev" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/MYSQL/">MYSQL</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-nodejs-socket" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/blog/2014/12/16/nodejs-socket/" class="article-date">
@@ -256,6 +323,10 @@ ga('send', 'pageview');
   <time datetime="2014-11-13T04:27:13.000Z" itemprop="datePublished">Nov 13 2014</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/Websites/">Websites</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -264,7 +335,7 @@ ga('send', 'pageview');
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/2014/11/13/BeautifulWebsites/">Beautiful Websites</a>
+      <a class="article-title" href="/blog/2014/11/13/BeautifulWebsites/">2014 Beautiful Websites</a>
     </h1>
   
 
@@ -320,6 +391,8 @@ ga('send', 'pageview');
       <a data-url="http://iworking.me/blog/2014/11/13/BeautifulWebsites/" data-id="zvvbb2w7jy4pro3e" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Websites/">Websites</a></li></ul>
+
     </footer>
   </div>
   
@@ -401,7 +474,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/Linux/">Linux</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/Linux/Command/">Command</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/MYSQL/">MYSQL</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/Mac/">Mac</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/Nodejs/">Nodejs</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/Svn/">Svn</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/Wordpress/">Wordpress</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/Linux/">Linux</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/Linux/Command/">Command</a><span class="category-list-count">4</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/MYSQL/">MYSQL</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/Mac/">Mac</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/Nodejs/">Nodejs</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/Svn/">Svn</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/Websites/">Websites</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/Wordpress/">Wordpress</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -410,7 +483,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Command/">Command</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/ContOS/">ContOS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Https/">Https</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Linux/">Linux</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/MYSQL/">MYSQL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Mac/">Mac</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Maven/">Maven</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/MySql/">MySql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Nginx/">Nginx</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Socket/">Socket</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Svn/">Svn</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Tcp/">Tcp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Tools/">Tools</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Wordpress/">Wordpress</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Zip/">Zip</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Command/">Command</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/ContOS/">ContOS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Https/">Https</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Linux/">Linux</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/MYSQL/">MYSQL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Mac/">Mac</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Maven/">Maven</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/MySql/">MySql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Nginx/">Nginx</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Socket/">Socket</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Svn/">Svn</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Tcp/">Tcp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Tools/">Tools</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Websites/">Websites</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Wordpress/">Wordpress</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Zip/">Zip</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -419,7 +492,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/blog/tags/Command/" style="font-size: 15.00px;">Command</a><a href="/blog/tags/ContOS/" style="font-size: 10.00px;">ContOS</a><a href="/blog/tags/Https/" style="font-size: 10.00px;">Https</a><a href="/blog/tags/Linux/" style="font-size: 20.00px;">Linux</a><a href="/blog/tags/MYSQL/" style="font-size: 10.00px;">MYSQL</a><a href="/blog/tags/Mac/" style="font-size: 10.00px;">Mac</a><a href="/blog/tags/Maven/" style="font-size: 10.00px;">Maven</a><a href="/blog/tags/MySql/" style="font-size: 10.00px;">MySql</a><a href="/blog/tags/Nginx/" style="font-size: 10.00px;">Nginx</a><a href="/blog/tags/Socket/" style="font-size: 10.00px;">Socket</a><a href="/blog/tags/Svn/" style="font-size: 10.00px;">Svn</a><a href="/blog/tags/Tcp/" style="font-size: 10.00px;">Tcp</a><a href="/blog/tags/Tools/" style="font-size: 10.00px;">Tools</a><a href="/blog/tags/Wordpress/" style="font-size: 10.00px;">Wordpress</a><a href="/blog/tags/Zip/" style="font-size: 10.00px;">Zip</a>
+      <a href="/blog/tags/Command/" style="font-size: 15.00px;">Command</a><a href="/blog/tags/ContOS/" style="font-size: 10.00px;">ContOS</a><a href="/blog/tags/Https/" style="font-size: 10.00px;">Https</a><a href="/blog/tags/Linux/" style="font-size: 20.00px;">Linux</a><a href="/blog/tags/MYSQL/" style="font-size: 10.00px;">MYSQL</a><a href="/blog/tags/Mac/" style="font-size: 10.00px;">Mac</a><a href="/blog/tags/Maven/" style="font-size: 10.00px;">Maven</a><a href="/blog/tags/MySql/" style="font-size: 10.00px;">MySql</a><a href="/blog/tags/Nginx/" style="font-size: 10.00px;">Nginx</a><a href="/blog/tags/Socket/" style="font-size: 10.00px;">Socket</a><a href="/blog/tags/Svn/" style="font-size: 10.00px;">Svn</a><a href="/blog/tags/Tcp/" style="font-size: 10.00px;">Tcp</a><a href="/blog/tags/Tools/" style="font-size: 10.00px;">Tools</a><a href="/blog/tags/Websites/" style="font-size: 10.00px;">Websites</a><a href="/blog/tags/Wordpress/" style="font-size: 10.00px;">Wordpress</a><a href="/blog/tags/Zip/" style="font-size: 10.00px;">Zip</a>
     </div>
   </div>
 
@@ -428,7 +501,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/03/">March 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/01/">January 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/12/">December 2014</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2012/06/">June 2012</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/03/">March 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/01/">January 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/12/">December 2014</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2012/06/">June 2012</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -440,6 +513,10 @@ ga('send', 'pageview');
       <ul>
         
           <li>
+            <a href="/blog/2015/03/31/printf命令与echo命令/">printf命令与echo命令至区别</a>
+          </li>
+        
+          <li>
             <a href="/blog/2015/03/28/shell-统计代码行数/">Shell 命令行统计代码行数</a>
           </li>
         
@@ -448,15 +525,11 @@ ga('send', 'pageview');
           </li>
         
           <li>
-            <a href="/blog/2015/01/28/Linix创建软连接/">linx 创建文件软连接</a>
-          </li>
-        
-          <li>
             <a href="/blog/2015/01/28/Linux搭建基于Nginx的Https服务/">Linux搭建基于Nginx的Https服务</a>
           </li>
         
           <li>
-            <a href="/blog/2015/01/21/文件权限设置/">Linux文件权限设置</a>
+            <a href="/blog/2015/01/28/Linix创建软连接/">linx 创建文件软连接</a>
           </li>
         
       </ul>
