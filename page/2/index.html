@@ -116,7 +116,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/blog/tags/CoffeeScript/" style="font-size: 10px;">CoffeeScript</a> <a href="/blog/tags/Cola/" style="font-size: 10px;">Cola</a> <a href="/blog/tags/Command/" style="font-size: 17.5px;">Command</a> <a href="/blog/tags/ContOS/" style="font-size: 10px;">ContOS</a> <a href="/blog/tags/Express/" style="font-size: 10px;">Express</a> <a href="/blog/tags/Https/" style="font-size: 10px;">Https</a> <a href="/blog/tags/Jade/" style="font-size: 10px;">Jade</a> <a href="/blog/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/blog/tags/Jquery/" style="font-size: 10px;">Jquery</a> <a href="/blog/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/blog/tags/MYSQL/" style="font-size: 10px;">MYSQL</a> <a href="/blog/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/blog/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/blog/tags/MySql/" style="font-size: 10px;">MySql</a> <a href="/blog/tags/Nginx/" style="font-size: 10px;">Nginx</a> <a href="/blog/tags/NodeJs/" style="font-size: 10px;">NodeJs</a> <a href="/blog/tags/Socket/" style="font-size: 10px;">Socket</a> <a href="/blog/tags/Svn/" style="font-size: 10px;">Svn</a> <a href="/blog/tags/Tcp/" style="font-size: 10px;">Tcp</a> <a href="/blog/tags/Tools/" style="font-size: 10px;">Tools</a> <a href="/blog/tags/UI/" style="font-size: 10px;">UI</a> <a href="/blog/tags/Websites/" style="font-size: 10px;">Websites</a> <a href="/blog/tags/Wordpress/" style="font-size: 10px;">Wordpress</a> <a href="/blog/tags/Zip/" style="font-size: 10px;">Zip</a> <a href="/blog/tags/mac/" style="font-size: 15px;">mac</a> <a href="/blog/tags/node/" style="font-size: 10px;">node</a> <a href="/blog/tags/重装/" style="font-size: 12.5px;">重装</a>
+						<a href="/blog/tags/CoffeeScript/" style="font-size: 10px;">CoffeeScript</a> <a href="/blog/tags/Cola/" style="font-size: 10px;">Cola</a> <a href="/blog/tags/Command/" style="font-size: 17.5px;">Command</a> <a href="/blog/tags/ContOS/" style="font-size: 10px;">ContOS</a> <a href="/blog/tags/Express/" style="font-size: 10px;">Express</a> <a href="/blog/tags/Https/" style="font-size: 10px;">Https</a> <a href="/blog/tags/Jade/" style="font-size: 10px;">Jade</a> <a href="/blog/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/blog/tags/Jquery/" style="font-size: 10px;">Jquery</a> <a href="/blog/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/blog/tags/MYSQL/" style="font-size: 10px;">MYSQL</a> <a href="/blog/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/blog/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/blog/tags/MySql/" style="font-size: 10px;">MySql</a> <a href="/blog/tags/Nginx/" style="font-size: 10px;">Nginx</a> <a href="/blog/tags/NodeJs/" style="font-size: 10px;">NodeJs</a> <a href="/blog/tags/Socket/" style="font-size: 10px;">Socket</a> <a href="/blog/tags/Svn/" style="font-size: 10px;">Svn</a> <a href="/blog/tags/Tcp/" style="font-size: 10px;">Tcp</a> <a href="/blog/tags/Tools/" style="font-size: 10px;">Tools</a> <a href="/blog/tags/UI/" style="font-size: 10px;">UI</a> <a href="/blog/tags/Websites/" style="font-size: 10px;">Websites</a> <a href="/blog/tags/Wordpress/" style="font-size: 10px;">Wordpress</a> <a href="/blog/tags/Zip/" style="font-size: 10px;">Zip</a> <a href="/blog/tags/command/" style="font-size: 10px;">command</a> <a href="/blog/tags/git/" style="font-size: 10px;">git</a> <a href="/blog/tags/mac/" style="font-size: 15px;">mac</a> <a href="/blog/tags/node/" style="font-size: 10px;">node</a> <a href="/blog/tags/重装/" style="font-size: 12.5px;">重装</a>
 					</div>
 				</section>
 				
@@ -199,6 +199,70 @@
 	</div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-Linux搭建基于Nginx的Https服务" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/blog/2015/01/28/Linux搭建基于Nginx的Https服务/" class="article-date">
+  	<time datetime="2015-01-28T14:43:22.000Z" itemprop="datePublished">2015-01-28</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2015/01/28/Linux搭建基于Nginx的Https服务/">Linux搭建基于Nginx的Https服务</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="关于SSL">关于SSL</h3><p>SSL证书是数字证书的一种，类似于驾驶证、护照和营业执照的电子副本。因为配置在服务器上，也称为SSL服务器证书。SSL 证书就是遵守 SSL协议，由受信任的数字证书颁发机构CA（如GlobalSign），在验证服务器身份后颁发，具有服务器身份验证和数据传输加密功能。<br>SSL证书通过在客户端浏览器和Web服务器之间建立一条SSL安全通道（Secure socket layer(SSL)安全协议是由Netscape Communication公司设计开发。该安全协议主要用来提供对用户和服务器的认证；对传送的数据进行加密和隐藏；确保数据在传送中不被改变，即数据的完整性，现已成为该领域中全球化的标准。由于SSL技术已建立到所有主要的浏览器和WEB服务器程序中，因此，仅需安装服务器证书就可以激活该功能了）。即通过它可以激活SSL协议，实现数据信息在客户端和服务器之间的加密传输，可以防止数据信息的泄露。保证了双方传递信息的安全性，而且用户可以通过服务器证书验证他所访问的网站是否是真实可靠。数位签名又名数字标识、签章 (即 Digital Certificate，Digital ID )，提供了一种在网上进行身份验证的方法，是用来标志和证明网路通信双方身份的数字信息文件，概念类似日常生活中的司机驾照或身份证相似。 数字签名主要用于发送安全电子邮件、访问安全站点、网上招标与投标、网上签约、网上订购、安全网上公文传送、网上办公、网上缴费、网上缴税以及网上购物等安全的网上电子交易活动。</p>
+<p>###建立服务器密钥<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$  openssl genrsa -out www.example.io.key <span class="number">1024</span></span><br><span class="line">Generating RSA private key, <span class="number">1024</span> bit long modulus</span><br><span class="line">...++++++</span><br><span class="line">.........................................................++++++</span><br><span class="line">e is <span class="number">65537</span> (<span class="number">0</span>x10001)</span><br></pre></td></tr></table></figure></p>
+<h3 id="建立服务器公钥">建立服务器公钥</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">$ openssl req -new -key www.example.io.key -out www.example.io.csr</span><br><span class="line">You are about to be asked to enter information that will be incorporated</span><br><span class="line">into your certificate request.</span><br><span class="line">What you are about to enter is what is called a Distinguished Name or a DN.</span><br><span class="line">There are quite a few fields but you can leave some blank</span><br><span class="line">For some fields there will be a default value,</span><br><span class="line">If you enter <span class="string">'.'</span>, the field will be left blank.</span><br><span class="line">-----</span><br><span class="line">Country Name (<span class="number">2</span> letter code) [XX]:CN</span><br><span class="line">State or Province Name (full name) []:ShangHai</span><br><span class="line">Locality Name (eg, city) [Default City]:ShangHai</span><br><span class="line">Organization Name (eg, company) [Default Company Ltd]:example</span><br><span class="line">Organizational Unit Name (eg, section) []:io</span><br><span class="line">Common Name (eg, your name or your server<span class="string">'s hostname) []:www.example.io</span><br><span class="line">Email Address []:alex.tong@bstek.com</span><br><span class="line"></span><br><span class="line">Please enter the following '</span>extra<span class="string">' attributes</span><br><span class="line">to be sent with your certificate request</span><br><span class="line">A challenge password []:</span><br><span class="line">An optional company name []:</span></span><br></pre></td></tr></table></figure>
+<h3 id="建立服务器证书">建立服务器证书</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ openssl x509 -req -days <span class="number">365</span> -in www.example.io.csr -signkey www.example.io.key -out www.example.io.crt</span><br><span class="line">Signature ok</span><br><span class="line">subject=/C=CN/ST=ShangHai/L=ShangHai/O=example/OU=io/CN=www.example.io/emailAddress=******@gmail.com</span><br><span class="line">Getting Private key</span><br></pre></td></tr></table></figure>
+<p>到此已经创建关于SSL证书和密钥已经完成</p>
+<h3 id="配置Nginx">配置Nginx</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">server &#123;&#10;    listen       443 ssl;&#10;    server_name  www.example.io;&#10;&#10;    ssl_certificate      /etc/nginx/ssl/www.example.io.crt;&#10;    ssl_certificate_key  /etc/nginx/ssl/www.example.io.key;&#10;&#10;    ssl_session_cache shared:SSL:1m;&#10;    ssl_session_timeout  10m;&#10;&#10;    ssl_ciphers  HIGH:!aNULL:!MD5;&#10;    ssl_prefer_server_ciphers   on;&#10;&#10;    location / &#123;&#10;        root   /home/www;&#10;        index  index.html index.htm;&#10;    &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="重启Nginx">重启Nginx</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service nginx restart</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Https/">Https</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Nginx/">Nginx</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/blog/categories/Linux/">Linux</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
   
     <article id="post-图片压缩" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -747,66 +811,6 @@
       
 	<div class="article-category tagcloud">
 	<a class="article-category-link" href="/blog/categories/Wordpress/">Wordpress</a>
-	</div>
-
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-linux-scp-command" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/blog/2014/12/08/linux-scp-command/" class="article-date">
-  	<time datetime="2014-12-08T14:43:22.000Z" itemprop="datePublished">2014-12-08</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2014/12/08/linux-scp-command/">linx 远程传输</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="远程文件传输到本地">远程文件传输到本地</h3><p>首先cd到要接受的文件夹目录<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#本文中的接受文件夹为</span></span><br><span class="line">$ scp ssh root@<span class="number">192.168</span>.<span class="number">18.11</span>:/root/wordpress/wp-config-sample.php  .</span><br></pre></td></tr></table></figure></p>
-<h3 id="本地文件传输到远程">本地文件传输到远程</h3><p>首先cd到要接受的文件夹目录<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#本文中的传输到的远程文件夹为/root/wordpress 远程IP为192.168.18.11 用户名为root</span></span><br><span class="line">$ scp /Users/alex/wp-config-sample.php root@<span class="number">192.168</span>.<span class="number">18.11</span>:/root/wordpress  .</span><br></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Linux/">Linux</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/blog/categories/Linux/">Linux</a>
 	</div>
 
 
