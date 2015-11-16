@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Mac 重装系统 | Alex 个人博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Mac 重装原因由于mac从购买至今未做过重装，垃圾文件堆积，本来就不大的SDD128GB 已所剩无几啦。还有一个让我下定决心重装的是原因是，安装node canvas 安装不成功。xcode升级7.0也无法升级。
+前期准备很重要，就是：备份。自从买了mac本人一直坚持Time Machine备份，但是为了数据0丢失，重装前再一次执行Time Machine必备的重装环境那就是：20MB以上的宽带">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mac 重装系统">
+<meta property="og:url" content="http://iworking.me/blog/2015/10/28/mac-重装/index.html">
+<meta property="og:site_name" content="Alex 个人博客">
+<meta property="og:description" content="Mac 重装原因由于mac从购买至今未做过重装，垃圾文件堆积，本来就不大的SDD128GB 已所剩无几啦。还有一个让我下定决心重装的是原因是，安装node canvas 安装不成功。xcode升级7.0也无法升级。
+前期准备很重要，就是：备份。自从买了mac本人一直坚持Time Machine备份，但是为了数据0丢失，重装前再一次执行Time Machine必备的重装环境那就是：20MB以上的宽带">
+<meta property="og:updated_time" content="2015-11-05T05:36:41.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Mac 重装系统">
+<meta name="twitter:description" content="Mac 重装原因由于mac从购买至今未做过重装，垃圾文件堆积，本来就不大的SDD128GB 已所剩无几啦。还有一个让我下定决心重装的是原因是，安装node canvas 安装不成功。xcode升级7.0也无法升级。
+前期准备很重要，就是：备份。自从买了mac本人一直坚持Time Machine备份，但是为了数据0丢失，重装前再一次执行Time Machine必备的重装环境那就是：20MB以上的宽带">
+  
+    <link rel="alternative" href="/blog/atom.xml" title="Alex 个人博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/blog/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/blog/img/alextong.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Alex Tong</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">强迫症、数码控 羽毛球&amp;骑行爱好者 非著名的全栈工程师</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/blog/archives">所有文章</a></li>
+				        
+							<li><a href="http://iworking.me">关于我</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/AlexTong" title="github">github</a>
+					        
+								<a class="google" target="_blank" href="https://plus.google.com/u/0/+alextong007" title="google">google</a>
+					        
+								<a class="rss" target="_blank" href="/blog/#" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="http://www.zhihu.com/people/alex.tong" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/blog/tags/CoffeeScript/" style="font-size: 10px;">CoffeeScript</a> <a href="/blog/tags/Cola/" style="font-size: 10px;">Cola</a> <a href="/blog/tags/Command/" style="font-size: 17.5px;">Command</a> <a href="/blog/tags/ContOS/" style="font-size: 10px;">ContOS</a> <a href="/blog/tags/Express/" style="font-size: 10px;">Express</a> <a href="/blog/tags/Https/" style="font-size: 10px;">Https</a> <a href="/blog/tags/Jade/" style="font-size: 10px;">Jade</a> <a href="/blog/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/blog/tags/Jquery/" style="font-size: 10px;">Jquery</a> <a href="/blog/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/blog/tags/MYSQL/" style="font-size: 10px;">MYSQL</a> <a href="/blog/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/blog/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/blog/tags/MySql/" style="font-size: 10px;">MySql</a> <a href="/blog/tags/Nginx/" style="font-size: 10px;">Nginx</a> <a href="/blog/tags/NodeJs/" style="font-size: 10px;">NodeJs</a> <a href="/blog/tags/Socket/" style="font-size: 10px;">Socket</a> <a href="/blog/tags/Svn/" style="font-size: 10px;">Svn</a> <a href="/blog/tags/Tcp/" style="font-size: 10px;">Tcp</a> <a href="/blog/tags/Tools/" style="font-size: 10px;">Tools</a> <a href="/blog/tags/UI/" style="font-size: 10px;">UI</a> <a href="/blog/tags/Websites/" style="font-size: 10px;">Websites</a> <a href="/blog/tags/Wordpress/" style="font-size: 10px;">Wordpress</a> <a href="/blog/tags/Zip/" style="font-size: 10px;">Zip</a> <a href="/blog/tags/mac/" style="font-size: 15px;">mac</a> <a href="/blog/tags/node/" style="font-size: 10px;">node</a> <a href="/blog/tags/重装/" style="font-size: 12.5px;">重装</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">奥巴马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">卡卡的美丽传说</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">本泽马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">吉格斯的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">习大大大不同</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">托蒂的博客</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Alex Tong</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/blog/img/alextong.png" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Alex Tong</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">强迫症、数码控 羽毛球&amp;骑行爱好者 非著名的全栈工程师</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/blog/archives">所有文章</a></li>
+		        
+					<li><a href="http://iworking.me">关于我</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/AlexTong" title="github">github</a>
+			        
+						<a class="google" target="_blank" href="https://plus.google.com/u/0/+alextong007" title="google">google</a>
+			        
+						<a class="rss" target="_blank" href="/blog/#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="http://www.zhihu.com/people/alex.tong" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-mac-重装" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/blog/2015/10/28/mac-重装/" class="article-date">
+  	<time datetime="2015-10-28T14:43:22.000Z" itemprop="datePublished">2015-10-28</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Mac 重装系统
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/mac/">mac</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/重装/">重装</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/blog/categories/mac/">mac</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Mac_重装原因">Mac 重装原因</h2><p>由于mac从购买至今未做过重装，垃圾文件堆积，本来就不大的SDD128GB 已所剩无几啦。<br>还有一个让我下定决心重装的是原因是，安装node canvas 安装不成功。xcode升级7.0也无法升级。</p>
+<h2 id="前期准备">前期准备</h2><p>很重要，就是：备份。<br>自从买了mac本人一直坚持Time Machine备份，但是为了数据0丢失，重装前再一次执行Time Machine<br>必备的重装环境那就是：20MB以上的宽带。Mac系统的重装都是需要实时在线认证和下载最新系统镜像文件的。</p>
+<h2 id="开始安装文件">开始安装文件</h2><p>第一步先格式化磁盘要不然，Mac直接安装是增量的。所以需要先格式化。不过数据会丢失哦。<br>第二步输入APPLE ID认证<br>第三步漫长的等………..待！<br>第四步骤设置电脑用户。</p>
+<h2 id="安装必要的软件">安装必要的软件</h2><p>作为程序员首先请安装XCode最新版本和xcode command line tools<br>为什么？ 这里不解释。<br>我的安装软件列表<br>XCode<br>iTerm2(命令工具)<br>oh-my-zsh<br>HomeBrew(OS X 不可或缺的套件管理器)<br>Dash (程序员好帮手)<br>Chrome浏览器<br>Sublime Text(最性感的代码编辑器)<br>WebStorm(很好用的前段编码神器)<br>NodeJS(brew install node)<br>Office 2016(本人购买了家庭版，这也是我电脑里唯一的正版软件，不要告诉别人哦！)<br>搜狗输入法(目前最好的输入法，几年前我开始使用Mac系统的时候那时候百度输入法还不错，但现在还是搜狗。为什么？大家比我都懂所以也是不解释)<br>TheUnarchiver （解压缩软件）<br>GitHub Desktop  也是挺好用的软件(刚开始没有这软件那时候git都是命令行)<br>MicrosoftRemoteDesktop 比较好用的远程桌面链接软件，要是需要远程桌面链接可以备一个。<br>Adobe Photoshop<br>Adobe illustrator</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/blog/2015/10/28/构建express-coffeescript项目/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">构建Express+CoffeeScript+jade项目</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="mac-重装" data-title="Mac 重装系统" data-url="http://iworking.me/blog/blog/2015/10/28/mac-重装/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Alex Tong
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/blog/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
