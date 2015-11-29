@@ -13,7 +13,8 @@
 <meta property="og:site_name" content="Alex 个人博客">
 <meta property="og:description" content="凭证存储如果你使用的是 SSH 方式连接远端，并且设置了一个没有口令的密钥，这样就可以在不输入用户名和密码的情况下安全地传输数据。 然而，这对 HTTP 协议来说是不可能的 —— 每一个连接都是需要用户名和密码的。 这在使用双重认证的情况下会更麻烦，因为你需要输入一个随机生成并且毫无规律的 token 作为密码。
 幸运的是，Git 拥有一个凭证系统来处理这个事情。 下面有一些 Git 的选项：">
-<meta property="og:updated_time" content="2015-11-29T14:04:26.000Z">
+<meta property="og:image" content="http://iworking.me/blog/blog/img/page/git-key.png">
+<meta property="og:updated_time" content="2015-11-29T14:11:24.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac Git 凭证存储">
 <meta name="twitter:description" content="凭证存储如果你使用的是 SSH 方式连接远端，并且设置了一个没有口令的密钥，这样就可以在不输入用户名和密码的情况下安全地传输数据。 然而，这对 HTTP 协议来说是不可能的 —— 每一个连接都是需要用户名和密码的。 这在使用双重认证的情况下会更麻烦，因为你需要输入一个随机生成并且毫无规律的 token 作为密码。
@@ -262,7 +263,10 @@
 <p>以上信息转自<a href="https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E5%87%AD%E8%AF%81%E5%AD%98%E5%82%A8" target="_blank" rel="external">https://git-scm.com/book/zh/v2/Git-工具-凭证存储</a></p>
 <h2 id="请按如下操作">请按如下操作</h2><p>在Mac上 执行如下命令：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global credential<span class="class">.helper</span> osxkeychain</span><br></pre></td></tr></table></figure></p>
 <p>此命令在用户跟目录下创建.gitconfig文件并创建内容<br>内容如下：<br><figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[<span class="atom">filter</span> <span class="string">"lfs"</span>]</span><br><span class="line">	<span class="atom">clean</span> = <span class="atom">git</span>-<span class="atom">lfs</span> <span class="atom">clean</span> <span class="comment">%f</span></span><br><span class="line">	<span class="atom">smudge</span> = <span class="atom">git</span>-<span class="atom">lfs</span> <span class="atom">smudge</span> <span class="comment">%f</span></span><br><span class="line">	<span class="atom">required</span> = <span class="atom">true</span></span><br><span class="line">[<span class="atom">user</span>]</span><br><span class="line">	<span class="atom">name</span> = <span class="name">Alex</span> <span class="name">Tong</span></span><br><span class="line">	<span class="atom">email</span> = <span class="atom">alex</span>.<span class="atom">tong007</span>@<span class="atom">gmail</span>.<span class="atom">com</span></span><br><span class="line">[<span class="atom">credential</span>]</span><br><span class="line">	<span class="atom">helper</span> = <span class="atom">osxkeychain</span></span><br></pre></td></tr></table></figure></p>
-<p>密码将保存在Mac钥匙串中</p>
+<p>密码将保存在Mac钥匙串中.</p>
+<h2 id="确认秘钥">确认秘钥</h2><p>再次执行Git相关命令时系统将弹出如下窗口<br><img src="/blog/img/page/git-key.png" alt=""></p>
+<p>单机【始终允许】</p>
+<p>恭喜您已成功配置Git凭证！</p>
 
       
     </div>

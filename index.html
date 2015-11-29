@@ -245,7 +245,10 @@
 <p>以上信息转自<a href="https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E5%87%AD%E8%AF%81%E5%AD%98%E5%82%A8" target="_blank" rel="external">https://git-scm.com/book/zh/v2/Git-工具-凭证存储</a></p>
 <h2 id="请按如下操作">请按如下操作</h2><p>在Mac上 执行如下命令：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global credential<span class="class">.helper</span> osxkeychain</span><br></pre></td></tr></table></figure></p>
 <p>此命令在用户跟目录下创建.gitconfig文件并创建内容<br>内容如下：<br><figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[<span class="atom">filter</span> <span class="string">"lfs"</span>]</span><br><span class="line">	<span class="atom">clean</span> = <span class="atom">git</span>-<span class="atom">lfs</span> <span class="atom">clean</span> <span class="comment">%f</span></span><br><span class="line">	<span class="atom">smudge</span> = <span class="atom">git</span>-<span class="atom">lfs</span> <span class="atom">smudge</span> <span class="comment">%f</span></span><br><span class="line">	<span class="atom">required</span> = <span class="atom">true</span></span><br><span class="line">[<span class="atom">user</span>]</span><br><span class="line">	<span class="atom">name</span> = <span class="name">Alex</span> <span class="name">Tong</span></span><br><span class="line">	<span class="atom">email</span> = <span class="atom">alex</span>.<span class="atom">tong007</span>@<span class="atom">gmail</span>.<span class="atom">com</span></span><br><span class="line">[<span class="atom">credential</span>]</span><br><span class="line">	<span class="atom">helper</span> = <span class="atom">osxkeychain</span></span><br></pre></td></tr></table></figure></p>
-<p>密码将保存在Mac钥匙串中</p>
+<p>密码将保存在Mac钥匙串中.</p>
+<h2 id="确认秘钥">确认秘钥</h2><p>再次执行Git相关命令时系统将弹出如下窗口<br><img src="/blog/img/page/git-key.png" alt=""></p>
+<p>单机【始终允许】</p>
+<p>恭喜您已成功配置Git凭证！</p>
 
       
     </div>
