@@ -3,18 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Linux文件权限设置 | Alex 个人博客</title>
+  <title>Mac Git 凭证存储 | Alex 个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="###目前所用到的命令（后续补充）1234567891011121314151617181920212223242526#查看文件权限的$ ls -l xxx.xxx （xxx.xxx是文件名）#查看文件夹下的所有文件权限$ ll#只有所有者才有读和写的权限$ chmod 600 filename#只有所有者才有读和写的权限，组群和其他人只有读的权限$ chmod 644 filename#只有所">
+  <meta name="description" content="凭证存储如果你使用的是 SSH 方式连接远端，并且设置了一个没有口令的密钥，这样就可以在不输入用户名和密码的情况下安全地传输数据。 然而，这对 HTTP 协议来说是不可能的 —— 每一个连接都是需要用户名和密码的。 这在使用双重认证的情况下会更麻烦，因为你需要输入一个随机生成并且毫无规律的 token 作为密码。
+幸运的是，Git 拥有一个凭证系统来处理这个事情。 下面有一些 Git 的选项：">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux文件权限设置">
-<meta property="og:url" content="http://iworking.me/blog/2015/01/21/文件权限设置/index.html">
+<meta property="og:title" content="Mac Git 凭证存储">
+<meta property="og:url" content="http://iworking.me/blog/2015/11/29/mac-git-osxkeychain/index.html">
 <meta property="og:site_name" content="Alex 个人博客">
-<meta property="og:description" content="###目前所用到的命令（后续补充）1234567891011121314151617181920212223242526#查看文件权限的$ ls -l xxx.xxx （xxx.xxx是文件名）#查看文件夹下的所有文件权限$ ll#只有所有者才有读和写的权限$ chmod 600 filename#只有所有者才有读和写的权限，组群和其他人只有读的权限$ chmod 644 filename#只有所">
-<meta property="og:updated_time" content="2015-01-21T03:44:52.000Z">
+<meta property="og:description" content="凭证存储如果你使用的是 SSH 方式连接远端，并且设置了一个没有口令的密钥，这样就可以在不输入用户名和密码的情况下安全地传输数据。 然而，这对 HTTP 协议来说是不可能的 —— 每一个连接都是需要用户名和密码的。 这在使用双重认证的情况下会更麻烦，因为你需要输入一个随机生成并且毫无规律的 token 作为密码。
+幸运的是，Git 拥有一个凭证系统来处理这个事情。 下面有一些 Git 的选项：">
+<meta property="og:updated_time" content="2015-11-29T14:04:26.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux文件权限设置">
-<meta name="twitter:description" content="###目前所用到的命令（后续补充）1234567891011121314151617181920212223242526#查看文件权限的$ ls -l xxx.xxx （xxx.xxx是文件名）#查看文件夹下的所有文件权限$ ll#只有所有者才有读和写的权限$ chmod 600 filename#只有所有者才有读和写的权限，组群和其他人只有读的权限$ chmod 644 filename#只有所">
+<meta name="twitter:title" content="Mac Git 凭证存储">
+<meta name="twitter:description" content="凭证存储如果你使用的是 SSH 方式连接远端，并且设置了一个没有口令的密钥，这样就可以在不输入用户名和密码的情况下安全地传输数据。 然而，这对 HTTP 协议来说是不可能的 —— 每一个连接都是需要用户名和密码的。 这在使用双重认证的情况下会更麻烦，因为你需要输入一个随机生成并且毫无规律的 token 作为密码。
+幸运的是，Git 拥有一个凭证系统来处理这个事情。 下面有一些 Git 的选项：">
   
     <link rel="alternative" href="/blog/atom.xml" title="Alex 个人博客" type="application/atom+xml">
   
@@ -199,11 +202,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-文件权限设置" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-mac-git-osxkeychain" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/blog/2015/01/21/文件权限设置/" class="article-date">
-  	<time datetime="2015-01-21T03:25:13.000Z" itemprop="datePublished">2015-01-21</time>
+      <a href="/blog/2015/11/29/mac-git-osxkeychain/" class="article-date">
+  	<time datetime="2015-11-29T15:00:00.000Z" itemprop="datePublished">2015-11-29</time>
 </a>
     </div>
   
@@ -216,7 +219,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Linux文件权限设置
+      Mac Git 凭证存储
     </h1>
   
 
@@ -225,12 +228,12 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Command/">Command</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Git/">Git</a></li></ul>
 	</div>
 
         
 	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/blog/categories/Linux/">Linux</a><a class="article-category-link" href="/blog/categories/Linux/Command/">Command</a>
+	<a class="article-category-link" href="/blog/categories/Git/">Git</a>
 	</div>
 
 
@@ -240,8 +243,26 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>###目前所用到的命令（后续补充）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#查看文件权限的</span></span><br><span class="line">$ ls <span class="operator">-l</span> xxx.xxx （xxx.xxx是文件名）</span><br><span class="line"></span><br><span class="line"><span class="comment">#查看文件夹下的所有文件权限</span></span><br><span class="line">$ ll</span><br><span class="line"></span><br><span class="line"><span class="comment">#只有所有者才有读和写的权限</span></span><br><span class="line">$ chmod <span class="number">600</span> filename</span><br><span class="line"></span><br><span class="line"><span class="comment">#只有所有者才有读和写的权限，组群和其他人只有读的权限</span></span><br><span class="line">$ chmod <span class="number">644</span> filename</span><br><span class="line"></span><br><span class="line"><span class="comment">#只有所有者才有读，写，执行的权限</span></span><br><span class="line">$ chmod <span class="number">700</span> filename</span><br><span class="line"></span><br><span class="line"><span class="comment">#只有所有者才有读，写，执行的权限，组群和其他人只有读和执行的权限</span></span><br><span class="line">$ chmod <span class="number">755</span> filename</span><br><span class="line"></span><br><span class="line"><span class="comment">#只有所有者才有读，写，执行的权限，组群和其他人只有执行的权限</span></span><br><span class="line">$ chmod <span class="number">711</span> filename</span><br><span class="line"></span><br><span class="line"><span class="comment">#每个人都有读写的权限</span></span><br><span class="line">$ chmod <span class="number">666</span> filename</span><br><span class="line"></span><br><span class="line"><span class="comment">#每个人都有读写和执行的权限</span></span><br><span class="line">$ chmod <span class="number">777</span> filename</span><br></pre></td></tr></table></figure></p>
-<p>####详细介绍<br>　　那么就会出现相类似的信息，主要都是这些：<br>-rw-rw-r–<br>　　一共有10位数<br>　　其中： 最前面那个 - 代表的是类型<br>　　中间那三个 rw- 代表的是所有者（user）<br>　　然后那三个 rw- 代表的是组群（group）<br>　　最后那三个 r– 代表的是其他人（other）<br>　　然后我再解释一下后面那9位数：<br>　　r 表示文件可以被读（read）<br>　　w 表示文件可以被写（write）<br>　　x 表示文件可以被执行（如果它是程序的话）<br>　　- 表示相应的权限还没有被授予<br>　　现在该说说修改文件权限了<br>　　在终端输入：<br>　　chmod o w xxx.xxx<br>　　表示给其他人授予写xxx.xxx这个文件的权限<br>　　chmod go-rw xxx.xxx<br>　　表示删除xxx.xxx中组群和其他人的读和写的权限<br>　　其中：<br>　　u 代表所有者（user）<br>　　g 代表所有者所在的组群（group）<br>　　o 代表其他人，但不是u和g （other）<br>　　a 代表全部的人，也就是包括u，g和o<br>　　r 表示文件可以被读（read）<br>　　w 表示文件可以被写（write）<br>　　x 表示文件可以被执行（如果它是程序的话）<br>　　其中：rwx也可以用数字来代替<br>　　r ————4<br>　　w ———–2<br>　　x ————1<br>　　- ————0<br>　　行动：<br>　　 表示添加权限<br>　　- 表示删除权限<br>　　= 表示使之成为唯一的权限<br>　　当大家都明白了上面的东西之后，那么我们常见的以下的一些权限就很容易都明白了：<br>　　-rw——- (600) 只有所有者才有读和写的权限<br>　　-rw-r–r– (644) 只有所有者才有读和写的权限，组群和其他人只有读的权限<br>　　-rwx—— (700) 只有所有者才有读，写，执行的权限<br>　　-rwxr-xr-x (755) 只有所有者才有读，写，执行的权限，组群和其他人只有读和执行的权限<br>　　-rwx–x–x (711) 只有所有者才有读，写，执行的权限，组群和其他人只有执行的权限<br>　　-rw-rw-rw- (666) 每个人都有读写的权限<br>　　-rwxrwxrwx (777) 每个人都有读写和执行的权限</p>
+        <h2 id="凭证存储">凭证存储</h2><p>如果你使用的是 SSH 方式连接远端，并且设置了一个没有口令的密钥，这样就可以在不输入用户名和密码的情况下安全地传输数据。 然而，这对 HTTP 协议来说是不可能的 —— 每一个连接都是需要用户名和密码的。 这在使用双重认证的情况下会更麻烦，因为你需要输入一个随机生成并且毫无规律的 token 作为密码。</p>
+<p>幸运的是，Git 拥有一个凭证系统来处理这个事情。 下面有一些 Git 的选项：</p>
+<ul>
+<li><p>默认所有都不缓存。 每一次连接都会询问你的用户名和密码。</p>
+</li>
+<li><p>“cache” 模式会将凭证存放在内存中一段时间。 密码永远不会被存储在磁盘中，并且在15分钟后从内存中清除。</p>
+</li>
+<li><p>“store” 模式会将凭证用明文的形式存放在磁盘中，并且永不过期。 这意味着除非你修改了你在 Git 服务器上的密码，否则你永远不需要再次输入你的凭证信息。 这种方式的缺点是你的密码是用明文的方式存放在你的 home 目录下。</p>
+</li>
+<li><p>如果你使用的是 Mac，Git 还有一种 “osxkeychain” 模式，它会将凭证缓存到你系统用户的钥匙串中。 这种方式将凭证存放在磁盘中，并且永不过期，但是是被加密的，这种加密方式与存放 HTTPS 凭证以及 Safari<br>的自动填写是相同的。</p>
+</li>
+<li><p>如果你使用的是 Windows，你可以安装一个叫做 “winstore” 的辅助工具。 这和上面说的 “osxkeychain” 十分类似，但是是使用 Windows Credential Store 来控制敏感信息。 可以在<br><a href="https://gitcredentialstore.codeplex.com" target="_blank" rel="external">https://gitcredentialstore.codeplex.com</a> 下载。</p>
+</li>
+</ul>
+<p>你可以设置 Git 的配置来选择上述的一种方式<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global credential<span class="class">.helper</span> cache</span><br></pre></td></tr></table></figure></p>
+<p>部分辅助工具有一些选项。 “store” 模式可以接受一个 –file <path></path> 参数，可以自定义存放密码的文件路径（默认是~/.git-credentials）。 “cache” 模式有 –timeout <seconds> 参数，可以设置后台进程的存活时间（默认是 “900”，也就是 15 分钟）。 下面是一个配置 “store” 模式自定义路径的例子：<br><figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">$</span> <span class="comment">git</span> <span class="comment">config</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">global</span> <span class="comment">credential</span><span class="string">.</span><span class="comment">helper</span> <span class="comment">store</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">file</span> <span class="comment">~/</span><span class="string">.</span><span class="comment">my</span><span class="literal">-</span><span class="comment">credentials</span></span><br></pre></td></tr></table></figure></seconds></p>
+<p>以上信息转自<a href="https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E5%87%AD%E8%AF%81%E5%AD%98%E5%82%A8" target="_blank" rel="external">https://git-scm.com/book/zh/v2/Git-工具-凭证存储</a></p>
+<h2 id="请按如下操作">请按如下操作</h2><p>在Mac上 执行如下命令：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global credential<span class="class">.helper</span> osxkeychain</span><br></pre></td></tr></table></figure></p>
+<p>此命令在用户跟目录下创建.gitconfig文件并创建内容<br>内容如下：<br><figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[<span class="atom">filter</span> <span class="string">"lfs"</span>]</span><br><span class="line">	<span class="atom">clean</span> = <span class="atom">git</span>-<span class="atom">lfs</span> <span class="atom">clean</span> <span class="comment">%f</span></span><br><span class="line">	<span class="atom">smudge</span> = <span class="atom">git</span>-<span class="atom">lfs</span> <span class="atom">smudge</span> <span class="comment">%f</span></span><br><span class="line">	<span class="atom">required</span> = <span class="atom">true</span></span><br><span class="line">[<span class="atom">user</span>]</span><br><span class="line">	<span class="atom">name</span> = <span class="name">Alex</span> <span class="name">Tong</span></span><br><span class="line">	<span class="atom">email</span> = <span class="atom">alex</span>.<span class="atom">tong007</span>@<span class="atom">gmail</span>.<span class="atom">com</span></span><br><span class="line">[<span class="atom">credential</span>]</span><br><span class="line">	<span class="atom">helper</span> = <span class="atom">osxkeychain</span></span><br></pre></td></tr></table></figure></p>
+<p>密码将保存在Mac钥匙串中</p>
 
       
     </div>
@@ -251,18 +272,9 @@
     
 <nav id="article-nav">
   
-    <a href="/blog/2015/01/21/图片压缩/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          图片无损压缩
-        
-      </div>
-    </a>
   
-  
-    <a href="/blog/2015/01/04/检查进程ID和强杀进程/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">检查进程ID和强杀进程</div>
+    <a href="/blog/2015/11/29/mac-canon/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Mac导出佳能相机照片</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -291,7 +303,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="文件权限设置" data-title="Linux文件权限设置" data-url="http://iworking.me/blog/blog/2015/01/21/文件权限设置/"></div>
+	<div class="ds-thread" data-thread-key="mac-git-osxkeychain" data-title="Mac Git 凭证存储" data-url="http://iworking.me/blog/blog/2015/11/29/mac-git-osxkeychain/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
