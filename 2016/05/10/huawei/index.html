@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>关于华为对Flex支持的倒退 | Alex 个人博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Flex布局Flex布局是CSS3为前端程序员带来的一个春天，头疼的弹性布局已不再是需要通过JavaScript去计算啦。可是？？？？
+国内手机浏览器对Flex支持的现状头疼的是现阶段国内大部分手机厂商和流氓公司门重新打包的手机浏览器对Flex布局的支持不是很好。最典型的就是以X5为内核的QQ浏览器和微信浏览器。QQ浏览器你可以说我不支持，但是你要是说“我不支持微信浏览器！”，对不起你的老板会有可">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于华为对Flex支持的倒退">
+<meta property="og:url" content="http://iworking.me/blog/2016/05/10/huawei/index.html">
+<meta property="og:site_name" content="Alex 个人博客">
+<meta property="og:description" content="Flex布局Flex布局是CSS3为前端程序员带来的一个春天，头疼的弹性布局已不再是需要通过JavaScript去计算啦。可是？？？？
+国内手机浏览器对Flex支持的现状头疼的是现阶段国内大部分手机厂商和流氓公司门重新打包的手机浏览器对Flex布局的支持不是很好。最典型的就是以X5为内核的QQ浏览器和微信浏览器。QQ浏览器你可以说我不支持，但是你要是说“我不支持微信浏览器！”，对不起你的老板会有可">
+<meta property="og:image" content="http://iworking.me/blog/blog/img/page/huawei-new.jpg">
+<meta property="og:image" content="http://iworking.me/blog/blog/img/page/huawei-old.jpg">
+<meta property="og:image" content="http://iworking.me/blog/blog/img/page/huawei-webkit-box.jpg">
+<meta property="og:updated_time" content="2016-05-10T15:13:08.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="关于华为对Flex支持的倒退">
+<meta name="twitter:description" content="Flex布局Flex布局是CSS3为前端程序员带来的一个春天，头疼的弹性布局已不再是需要通过JavaScript去计算啦。可是？？？？
+国内手机浏览器对Flex支持的现状头疼的是现阶段国内大部分手机厂商和流氓公司门重新打包的手机浏览器对Flex布局的支持不是很好。最典型的就是以X5为内核的QQ浏览器和微信浏览器。QQ浏览器你可以说我不支持，但是你要是说“我不支持微信浏览器！”，对不起你的老板会有可">
+  
+    <link rel="alternative" href="/blog/atom.xml" title="Alex 个人博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/blog/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/blog/img/alextong.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Alex Tong</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">强迫症、数码控 羽毛球&amp;骑行爱好者 非著名的全栈工程师</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/blog/archives">所有文章</a></li>
+				        
+							<li><a href="/blog/tags/随笔">随笔</a></li>
+				        
+							<li><a href="http://iworking.me">关于我</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/AlexTong" title="github">github</a>
+					        
+								<a class="google" target="_blank" href="https://plus.google.com/u/0/+alextong007" title="google">google</a>
+					        
+								<a class="zhihu" target="_blank" href="http://www.zhihu.com/people/alex.tong" title="zhihu">zhihu</a>
+					        
+								<a class="douban" target="_blank" href="http://www.douban.com/people/alex-tong" title="douban">douban</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/blog/tags/Android/" style="font-size: 10px;">Android</a> <a href="/blog/tags/CoffeeScript/" style="font-size: 10px;">CoffeeScript</a> <a href="/blog/tags/Cola/" style="font-size: 10px;">Cola</a> <a href="/blog/tags/Command/" style="font-size: 17.5px;">Command</a> <a href="/blog/tags/ContOS/" style="font-size: 10px;">ContOS</a> <a href="/blog/tags/Css3/" style="font-size: 10px;">Css3</a> <a href="/blog/tags/Express/" style="font-size: 10px;">Express</a> <a href="/blog/tags/Git/" style="font-size: 10px;">Git</a> <a href="/blog/tags/Https/" style="font-size: 10px;">Https</a> <a href="/blog/tags/Jade/" style="font-size: 10px;">Jade</a> <a href="/blog/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/blog/tags/Jquery/" style="font-size: 10px;">Jquery</a> <a href="/blog/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/blog/tags/MYSQL/" style="font-size: 10px;">MYSQL</a> <a href="/blog/tags/Mac/" style="font-size: 12.5px;">Mac</a> <a href="/blog/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/blog/tags/MySql/" style="font-size: 10px;">MySql</a> <a href="/blog/tags/Nginx/" style="font-size: 10px;">Nginx</a> <a href="/blog/tags/NodeJs/" style="font-size: 10px;">NodeJs</a> <a href="/blog/tags/Socket/" style="font-size: 10px;">Socket</a> <a href="/blog/tags/Svn/" style="font-size: 10px;">Svn</a> <a href="/blog/tags/Tcp/" style="font-size: 10px;">Tcp</a> <a href="/blog/tags/Tools/" style="font-size: 10px;">Tools</a> <a href="/blog/tags/UI/" style="font-size: 10px;">UI</a> <a href="/blog/tags/Websites/" style="font-size: 10px;">Websites</a> <a href="/blog/tags/Wordpress/" style="font-size: 10px;">Wordpress</a> <a href="/blog/tags/Zip/" style="font-size: 10px;">Zip</a> <a href="/blog/tags/canon/" style="font-size: 10px;">canon</a> <a href="/blog/tags/command/" style="font-size: 10px;">command</a> <a href="/blog/tags/git/" style="font-size: 10px;">git</a> <a href="/blog/tags/java/" style="font-size: 10px;">java</a> <a href="/blog/tags/mac/" style="font-size: 15px;">mac</a> <a href="/blog/tags/node/" style="font-size: 10px;">node</a> <a href="/blog/tags/重装/" style="font-size: 12.5px;">重装</a> <a href="/blog/tags/随笔/" style="font-size: 10px;">随笔</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.zhihu.com/people/bao-yilei-32">Benny的知乎</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://weibo.com/u/2339102563">Thomas的微博</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://weibo.com/bstek">Bstek微博</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://weibo.com/dorado7">Dorado7微博</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">强迫症、数码控 羽毛球 &amp; 骑行爱好者 非著名的全栈工程师</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Alex Tong</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/blog/img/alextong.png" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Alex Tong</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">强迫症、数码控 羽毛球&amp;骑行爱好者 非著名的全栈工程师</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/blog/archives">所有文章</a></li>
+		        
+					<li><a href="/blog/tags/随笔">随笔</a></li>
+		        
+					<li><a href="http://iworking.me">关于我</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/AlexTong" title="github">github</a>
+			        
+						<a class="google" target="_blank" href="https://plus.google.com/u/0/+alextong007" title="google">google</a>
+			        
+						<a class="zhihu" target="_blank" href="http://www.zhihu.com/people/alex.tong" title="zhihu">zhihu</a>
+			        
+						<a class="douban" target="_blank" href="http://www.douban.com/people/alex-tong" title="douban">douban</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-huawei" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/blog/2016/05/10/huawei/" class="article-date">
+  	<time datetime="2016-05-10T14:20:00.000Z" itemprop="datePublished">2016-05-10</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      关于华为对Flex支持的倒退
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Css3/">Css3</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/blog/categories/前端/">前端</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Flex布局">Flex布局</h2><p>Flex布局是CSS3为前端程序员带来的一个春天，头疼的弹性布局已不再是需要通过JavaScript去计算啦。<br>可是？？？？</p>
+<h2 id="国内手机浏览器对Flex支持的现状">国内手机浏览器对Flex支持的现状</h2><p>头疼的是现阶段国内大部分手机厂商和流氓公司门重新打包的手机浏览器对Flex布局的支持不是很好。<br>最典型的就是以X5为内核的QQ浏览器和微信浏览器。QQ浏览器你可以说我不支持，但是你要是说“我不支持微信浏览器！”，对不起你的老板会有可能找你谈心喝咖啡哦。</p>
+<p>更让人生气的华为手机自带浏览器在2015款手机上支持的很好的Flex布局却到了2016 的新机器Android6.0反而不支持Flex布局啦。<br>本人问华为的童鞋们：“你们是在玩儿穿越吗？”</p>
+<p>刚开始以为只是有可能不支持Flex的某几个属性了呢，结果测试一看，彻底让我崩溃啦。<br>看图（华为P8 Android6.0）<br><img src="/blog/img/page/huawei-new.jpg" alt=""></p>
+<p>华为2015款手机<br><img src="/blog/img/page/huawei-old.jpg" alt=""></p>
+<h2 id="遇到问题了要解决，谁让我们是圣斗士呢">遇到问题了要解决，谁让我们是圣斗士呢</h2><p>一个好的消息是通过本人测试，对Webkit-box 布局支持的还是蛮好的。<br>看图（华为P8 Android6.0）<br><img src="/blog/img/page/huawei-webkit-box.jpg" alt=""></p>
+<p>解决问题的思路是，写一段js判断给Document加一个className<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="built_in">document</span>.documentElement.style.flex !== <span class="string">"string"</span>) &#123;</span><br><span class="line">    $(<span class="built_in">document</span>.documentElement).addClass(<span class="string">"flex-unsupported"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;).call(<span class="keyword">this</span>);</span><br></pre></td></tr></table></figure></p>
+<p>然后对其编写兼容性支持CSS代码<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.flex-unsupported</span> &#123;</span><br><span class="line">    <span class="comment">///兼容CSS</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/blog/2015/11/29/mac-git-osxkeychain/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Mac Git 凭证存储</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="huawei" data-title="关于华为对Flex支持的倒退" data-url="http://iworking.me/blog/blog/2016/05/10/huawei/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 Alex Tong
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/blog/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
